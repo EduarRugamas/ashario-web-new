@@ -41,7 +41,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a href="product-details.html?objectID=${item.objectID}" class="btn btn-dark btn-ecomm">Product Details</a>
+                                    <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-dark btn-ecomm">Product Details</a>
                                     <a href="" class="btn btn-light btn-ecomm" data-bs-toggle="modal" data-bs-target="#QuickViewProduct" id="QuickViewModalBtn"><i class="bx bx-zoom-in"></i>Quick View</a>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ search.addWidgets([
             }
         }),
 
-        instantsearch.widgets.menuSelect({
+        instantsearch.widgets.refinementList({
             container: '#container-menu',
             attribute: 'category',
 
