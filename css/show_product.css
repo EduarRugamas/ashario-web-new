@@ -1,0 +1,176 @@
+.div-2 {
+    display: flex;
+}
+
+.panel-colum-left {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.panel-search {
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
+}
+
+.css-lineage {
+    margin-top: 0;
+}
+
+.title-lineage-css {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.panel-left-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+
+.container-text-thc-potency {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-thc-potency {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-rating-thc-potency {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.container-cbd-potency {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+}
+
+.container-text-cbd-potency{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-cbd-potency {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-general-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-categories-interno {
+    margin-top: 0;
+}
+
+.container-text-categories {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-categories {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-price {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+}
+
+.container-price-interno {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-categories {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*.container-price-refinementList {*/
+/*    align-self: flex-start;*/
+/*    width: 100%;*/
+/*}*/
+
+.container-available-weights {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.container-available-weights-interno {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-available-weights {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-brands {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.container-brands-interno {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text-brands {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+

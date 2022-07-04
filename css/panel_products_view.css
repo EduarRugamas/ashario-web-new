@@ -1,0 +1,27 @@
+.panel-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.panel-searchBox-css {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.container-panel-searchBox {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.css-searchBox {
+    display: flex;
+    flex: 1 1 auto;
+    width: auto;
+    margin-bottom: 0;
+}
