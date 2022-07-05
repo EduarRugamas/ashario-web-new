@@ -55,8 +55,8 @@ index.search('', {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="selector-imgs-products" style="height: 90px; display: flex; justify-content: center; align-content: center; margin: 5px;" class="border mb-2 p-2">
-                                        <img src="${hits[0].image_urls[0]}" alt="">
+                                    <div id="selector-imgs-products" style="height: 110px; display: flex; justify-content: center; align-content: center; margin: 5px;" class="border mb-2 p-2">
+                                        <img src="${hits[0].image_urls[0]}" alt="" class="ms-1">
                                         <img src="${hits[0].image_urls[1]}" alt="">
                                     </div>
                                 </div>                                
