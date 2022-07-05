@@ -25,7 +25,7 @@ index.search('', {
                             <nav class="navbar navbar-expand">
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="shop-cart.html" class="nav-link position-relative cart-link">
+                                        <a href="/views/cart.html" class="nav-link position-relative cart-link">
                                             <span class="alert-count" id="count_quantity_cart">8</span>
                                             <i class="bx bx-shopping-bag"></i>
                                         </a>
