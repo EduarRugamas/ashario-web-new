@@ -52,9 +52,9 @@ index.search('', {
                                                 <div class="item">
                                                     <img src="" alt="" class="img-fluid" id="imagen_carusel">
                                                 </div>
-                                                <div>
-                                                    <button type="submit">img</button>
-                                                </div>
+                                            </div>
+                                            <div>
+                                                <button type="submit">img</button>
                                             </div>
                                         </div>
                                     </div>
