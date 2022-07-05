@@ -56,7 +56,7 @@ index.search('', {
                                         </div>
                                     </div>
                                     <div id="selector-imgs-products" style="height: 90px; display: flex; justify-content: space-between;">
-                                        <img src="${hits[0].img_urls[0]}" alt="">
+                                        <img src="${hits[0].image_urls[0]}" alt="">
                                     </div>
                                 </div>                                
                             </div>
