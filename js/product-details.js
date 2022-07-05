@@ -55,7 +55,7 @@ index.search('', {
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div id="selector-imgs-products" style="height: 90px; display: flex; justify-content: space-between;">
                                         <button type="submit">img</button>
                                     </div>
                                 </div>                                
