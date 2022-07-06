@@ -383,7 +383,7 @@ if (images.length === 0) {
 } else {
     $container_img.src = `${images[posicionActual]}`;
       images.forEach( miniatura => {
-            console.log(miniatura);
+            console.log(miniatura.index);
             let img_miniatura = document.createElement('img');
             img_miniatura.id='images_miniaturas';
             img_miniatura.style='margin-right: 20px; object-fit: cover;';
