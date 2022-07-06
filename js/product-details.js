@@ -382,7 +382,7 @@ if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
     $container_img.src = `${images[posicionActual]}`;
-      images.forEach( miniatura, index => {
+      images.forEach( (miniatura,  index) => {
             console.log(miniatura);
             console.log(index)
             let img_miniatura = document.createElement('img');
