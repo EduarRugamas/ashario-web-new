@@ -381,7 +381,7 @@ let intervalo;
 if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
-
+    $container_img.src = `${images[posicionActual]}`;
       images.forEach( miniatura => {
             console.log(miniatura);
             let img_miniatura = document.createElement('img');
@@ -390,8 +390,6 @@ if (images.length === 0) {
             img_miniatura.className='border p-1';
             img_miniatura.src=`${miniatura}`;
             miniatura_img.appendChild(img_miniatura);
-
-            console.log(miniatura.count);
       });
 
 //     function nextPhoto(){
