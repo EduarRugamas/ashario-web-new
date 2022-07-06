@@ -381,7 +381,7 @@ let intervalo;
 if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
-      $container_img.src = `${images[posicionActual]}`;
+
       images.forEach( (miniatura,  index) => {
             console.log(miniatura);
             console.log(index)
@@ -390,6 +390,7 @@ if (images.length === 0) {
             img_miniatura.className='border p-1';
             if (index === 0) {
                 img_miniatura.className='active_item';
+                $container_img.src=`${miniatura[index]}`;
             }
             img_miniatura.src=`${miniatura}`;
             miniatura_img.appendChild(img_miniatura);
