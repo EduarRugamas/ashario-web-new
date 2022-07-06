@@ -37,13 +37,13 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             <div class="d-flex align-items-center">
                                 <div class="mb-1 product-price itemprice">
                                     <!--   <span class="fs-5 currencyformat">CAD </span><span class="fs-5">\$${item.bucket_price}</span>-->
-                                    <span class="fs-5 currencyformat">CAD </span><span class="fs-5">\$ ${ (item.available_weights[0] === "each") ? item.price_each : (item.available_weights[0] === "gram") ? item.price_gram : (item.available_weights[0] === "eighth ounce") ? item.price_eighth_ounce : (item.available_weights[0] === "quarter ounce") ? item.price_quarter_ounce : (item.available_weights[0] === "half ounce") ? item.price_half_ounce : (item.available_weights[0] === "ounce") ? item.price_ounce : (item.available_weights[0] === "half gram") ? item.price_half_gram : '00.00'   }</span>
+                                    <span class="fs-5 currencyformat">CAD </span><span class="fs-5">\$ ${ (item.available_weights[0] === "each") ? `${item.price_each} ${<span class="er-aeach">/each</span>}` : (item.available_weights[0] === "gram") ? `${item.price_gram}${<span class="er-each">/1G</span>}` : (item.available_weights[0] === "eighth ounce") ? `${item.price_eighth_ounce}/3.5G` : (item.available_weights[0] === "quarter ounce") ? `${item.price_quarter_ounce}/7G` : (item.available_weights[0] === "half ounce") ? item.price_half_ounce : (item.available_weights[0] === "ounce") ? item.price_ounce : (item.available_weights[0] === "half gram") ? item.price_half_gram : '00.00'   }</span>
                                 </div>
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-dark btn-ecomm">Product Details</a>
-                                    <a href="" class="btn btn-light btn-ecomm" data-bs-toggle="modal" data-bs-target="#QuickViewProduct" id="QuickViewModalBtn"><i class="bx bx-zoom-in"></i>Quick View</a>
+                                    <a href="/views/cart.html" class="btn btn-light btn-ecomm"><i class="bx bxs-cart-add"></i>add to cart</a>
                                 </div>
                             </div>
                         </div>
