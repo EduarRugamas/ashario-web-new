@@ -56,10 +56,6 @@ const HitsRender = (renderOptions, isFirstRender) => {
     ).join('')}
     `;
 };
-
-function add_to_cart()  {
-    console.log('se preciono el button de add to cart');
-}
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 //   fin de widgets custom o personalizados
@@ -122,6 +118,9 @@ search.addWidgets([
 
 search.start();
 
+function add_to_cart()  {
+    console.log('se preciono el button de add to cart');
+}
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
