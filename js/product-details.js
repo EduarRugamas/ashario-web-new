@@ -390,7 +390,7 @@ if (images.length === 0) {
             img_miniatura.className='border p-1';
             if (index === 0) {
                 img_miniatura.className='active_item';
-                $container_img.src=`${miniatura[index]}`;
+                $container_img.src=`${miniatura}`;
             }
             img_miniatura.src=`${miniatura}`;
             miniatura_img.appendChild(img_miniatura);
