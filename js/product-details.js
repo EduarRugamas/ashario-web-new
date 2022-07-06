@@ -386,9 +386,12 @@ if (images.length === 0) {
             console.log(miniatura);
             let img_miniatura = document.createElement('img');
             img_miniatura.id='images_miniaturas';
+            img_miniatura.style='margin-right: 25px; object-fit: cover; opacity: 0.7; ';
+            img_miniatura.className='border p-1';
             img_miniatura.src=`${miniatura}`;
+            miniatura_img.appendChild(img_miniatura);
 
-          miniatura_img.appendChild(img_miniatura);
+            console.log(miniatura.length);
       });
 
 //     function nextPhoto(){
