@@ -382,13 +382,16 @@ if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
     $container_img.src = `${images[posicionActual]}`;
+    const active_item = document.querySelector('.active_item');
       images.forEach( (miniatura,  index) => {
             console.log(miniatura);
             console.log(index)
             let img_miniatura = document.createElement('img');
             img_miniatura.id='images_miniaturas';
-            img_miniatura.style='margin-right: 20px; object-fit: cover;';
             img_miniatura.className='border p-1';
+            if (index === 0) {
+                img_miniatura.className='active_item';
+            }
             img_miniatura.src=`${miniatura}`;
             miniatura_img.appendChild(img_miniatura);
       });
