@@ -400,6 +400,7 @@ if (images.length === 0) {
                     const active_item = document.querySelector('.active_item');
                     active_item.classList.remove('active_item');
                     this.classList.add('active_item');
+                    $container_img.src=this.src
                 });
             });
       });
