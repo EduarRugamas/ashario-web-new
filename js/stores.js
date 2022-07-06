@@ -44,7 +44,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a href="/views/cart.html" class="btn btn-dark btn-ecomm"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <button class="btn btn-dark btn-ecomm" onclick="add_to_cart()"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                 </div>
                             </div>
@@ -55,8 +55,11 @@ const HitsRender = (renderOptions, isFirstRender) => {
         `
     ).join('')}
     `;
-
 };
+
+function add_to_cart()  {
+    console.log('se preciono el button de add to cart');
+}
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 //   fin de widgets custom o personalizados
