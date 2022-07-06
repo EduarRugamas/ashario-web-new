@@ -56,8 +56,8 @@ index.search('', {
                                         </div>
                                     </div>
                                     <div id="selector-imgs-products" style="height: 110px; display: flex; justify-content: center; align-content: center; margin: 5px;" class="border mb-2 p-2">
-                                        <img src="${hits[0].image_urls[0]}" alt="" style="margin-right: 25px;" class="border p-1">
-                                        <img src="${hits[0].image_urls[1]}" alt="" class="border p-1">
+                                        <!-- <img src="${hits[0].image_urls[0]}" alt="" style="margin-right: 25px;" class="border p-1"> -->
+                                        <!-- <img src="${hits[0].image_urls[1]}" alt="" class="border p-1"> -->
                                     </div>
                                 </div>                                
                             </div>
@@ -373,23 +373,31 @@ const images = hits[0].image_urls;
 
 let posicionActual = 0;
 let $container_img = document.querySelector('#imagen_carusel');
+let miniatura_img = document.querySelector('#selector-imgs-products');
+
+
 const TIEMPO_INTERVALO_MILESIMAS_SEG = 9000;
 let intervalo;
 
 if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
-    function nextPhoto(){
-    console.log('click right');
-    if (posicionActual >= images.length - 1){
-        posicionActual = 0;
-    } else {
-        posicionActual++;
-    }
-        $container_img.src = `${images[posicionActual]}`;
-}
-    $container_img.src = `${images[posicionActual]}`;
-    intervalo = setInterval(nextPhoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+
+      images.forEach( miniatura => {
+            console.log(miniatura)
+      });
+
+//     function nextPhoto(){
+//     console.log('click right');
+//     if (posicionActual >= images.length - 1){
+//         posicionActual = 0;
+//     } else {
+//         posicionActual++;
+//     }
+//         $container_img.src = `${images[posicionActual]}`;
+// }
+//     $container_img.src = `${images[posicionActual]}`;
+//     intervalo = setInterval(nextPhoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
 }
 
 
