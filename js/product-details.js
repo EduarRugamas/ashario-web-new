@@ -71,8 +71,7 @@ index.search('', {
                                             <p class="badge bg-success font-13 ">${hits[0].brand}</p>
                                             <p class="badge bg-success font-13 ">${hits[0].brand_subtype}</p>
                                         </div>
-                                        <div class="d-flex align-items-center mt-0 gap-2" id="text_price" >
-                                        </div>
+                                        <div class="d-flex align-items-center mt-0 gap-2" id="text_price"></div>
                                         <div class="mt-3">
                                             <h6>Details:</h6>
                                             <dl class="row mt-3" id="container-details-dl">
@@ -384,7 +383,12 @@ if (images.length === 0) {
 } else {
 
       images.forEach( miniatura => {
-            console.log(miniatura)
+            console.log(miniatura);
+            let img_miniatura = document.createElement('img');
+            img_miniatura.id='images_miniaturas';
+            img_miniatura.src=`${miniatura}`;
+
+          miniatura_img.appendChild(img_miniatura);
       });
 
 //     function nextPhoto(){
