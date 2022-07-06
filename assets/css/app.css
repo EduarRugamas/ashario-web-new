@@ -1588,3 +1588,28 @@ body.bg-theme15 {
 		padding: 2rem 1rem
 	}
 }
+
+
+
+#selector-imgs-products {
+	height: 110px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#selector-imgs-products #images_miniaturas {
+	cursor: pointer;
+	object-fit: cover;
+	opacity: 0.7;
+	transition: 0.3s;
+}
+
+#selector-imgs-products #images_miniaturas:hover {
+	opacity: 1;
+}
+
+.active_item {
+	opacity: 1 !important;
+	box-shadow: 0 5px 5px rgba(1, 23,46, 0.6);
+}

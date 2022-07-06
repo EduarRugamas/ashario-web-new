@@ -55,7 +55,7 @@ index.search('', {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="selector-imgs-products" style="height: 110px; display: flex; justify-content: center; align-content: center; margin: 5px;" class="border mb-2 p-2">
+                                    <div id="selector-imgs-products" style="" class="border mb-2 p-2">
                                         <!-- <img src="${hits[0].image_urls[0]}" alt="" style="margin-right: 25px;" class="border p-1"> -->
                                         <!-- <img src="${hits[0].image_urls[1]}" alt="" class="border p-1"> -->
                                     </div>
@@ -382,12 +382,6 @@ if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
 } else {
     $container_img.src = `${images[posicionActual]}`;
-
-        for (let miniaturas of images) {
-            console.log( 'en el for ', miniaturas);
-        }
-
-
       images.forEach( miniatura => {
             console.log(miniatura);
             let img_miniatura = document.createElement('img');
@@ -397,6 +391,8 @@ if (images.length === 0) {
             img_miniatura.src=`${miniatura}`;
             miniatura_img.appendChild(img_miniatura);
       });
+
+      let img_minis = document.getElementById('images_miniaturas');
 
 //     function nextPhoto(){
 //     console.log('click right');
@@ -412,15 +408,13 @@ if (images.length === 0) {
 }
 
 
-})
-;
+});
 
 function add_to_cart(product_id, select_option_quantity, select_option_weight) {
     let local_storage = window.localStorage;
     let data_cart = data;
 
     console.log('JSON sin agregar producto al carrito : ', data);
-
 
     if ((product_id === null || product_id === undefined) || (select_option_quantity === 0 || select_option_quantity === null || select_option_quantity === undefined)) {
         console.log("los datos vienen vacios o null o undefined");
