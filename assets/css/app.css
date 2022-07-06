@@ -1602,7 +1602,7 @@ body.bg-theme15 {
 	cursor: pointer;
 	object-fit: cover;
 	opacity: 0.7;
-	transition: 0.3s;
+	transition: 0.3s linear;
 }
 
 #selector-imgs-products #images_miniaturas:hover {
