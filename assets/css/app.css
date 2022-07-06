@@ -1590,7 +1590,6 @@ body.bg-theme15 {
 }
 
 
-
 #selector-imgs-products {
 	height: 110px;
 	display: flex;
@@ -1602,7 +1601,7 @@ body.bg-theme15 {
 	cursor: pointer;
 	object-fit: cover;
 	opacity: 0.7;
-	transition: 0.3s linear;
+	transition: 0.3s;
 }
 
 #selector-imgs-products #images_miniaturas:hover {
@@ -1612,4 +1611,8 @@ body.bg-theme15 {
 .active_item {
 	opacity: 1 !important;
 	box-shadow: 0 5px 5px rgba(1, 23,46, 0.6);
+}
+
+#imagen_carusel {
+	transition: linear 3s;
 }
