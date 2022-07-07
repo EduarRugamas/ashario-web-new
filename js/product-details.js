@@ -464,7 +464,7 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         //     priceId: "each",
         //     count: select_option_quantity
         // });
-
+        let frame = document.getElementById('jane-menu');
         frame.contentWindow.postMessage(data_product_1, '*');
 
         console.log('data', data_product_1);
@@ -475,6 +475,7 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         //     priceId: select_option_weight,
         //     count: select_option_quantity
         // });
+        let frame = document.getElementById('jane-menu');
         frame.contentWindow.postMessage(data_product_2, '*');
         console.log('data', data_product_2);
     }
