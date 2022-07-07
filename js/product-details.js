@@ -467,7 +467,7 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         //     count: select_option_quantity
         // });
 
-        //frame.contentWindow.postMessage(data_product_1, '*')
+        frame.contentWindow.postMessage(data_product_1, '*');
 
         console.log('data', data_product_1);
     } else {
@@ -477,7 +477,7 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         //     priceId: select_option_weight,
         //     count: select_option_quantity
         // });
-        //frame.contentWindow.postMessage(data_product_2, '*');
+        frame.contentWindow.postMessage(data_product_2, '*');
         console.log('data', data_product_2);
     }
 
