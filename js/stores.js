@@ -1,5 +1,4 @@
 import {searchClient} from '../config/config.js';
-import {data} from "../config/data";
 
 const search = instantsearch({
     indexName: 'menu-products-production',
