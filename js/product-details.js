@@ -95,8 +95,7 @@ index.search('', {
                                         </div>
                                         <div class="d-flex gap-2 mt-3">
 <!--                                            <a href="" class="btn btn-white btn-ecomm" id="add-to-cart"><i class="bx bxs-cart-add"></i>Add to Cart</a>-->
-                                            <button type="submit" class="btn btn-white btn-ecomm" id="add-to-cart"><i class="bx bxs-cart-add"></i>Add to Cart</button> 
-                                            <a href="javascript:;" class="btn btn-light btn-ecomm"><i class="bx bx-heart"></i>Add to Wishlist</a>
+                                            <button type="submit" class="btn btn-dark btn-ecomm" id="add-to-cart"><i class="bx bxs-cart-add"></i>Add to Cart</button>
                                         </div>
                                         <hr/>
                                 </div>
@@ -424,8 +423,36 @@ if (images.length === 0) {
 });
 
 function add_to_cart(product_id, select_option_quantity, select_option_weight) {
-    let local_storage = window.localStorage;
-    let data_cart = data;
+
+    let data_product_2 = {
+        messageType: 'analyticsEvent',
+        payload: {
+            name: 'cartItemAdd',
+            properties: {
+                productId: product_id,
+                product: {
+                    product_id: product_id,
+                    priceId: select_option_weight,
+                    count: select_option_quantity
+                }
+            }
+        }
+    }
+
+    let data_product_1 = {
+        messageType: 'analyticsEvent',
+        payload: {
+            name: 'cartItemAdd',
+            properties: {
+                productId: product_id,
+                product: {
+                    product_id: product_id,
+                    priceId: 'each',
+                    count: select_option_quantity
+                }
+            }
+        }
+    }
 
     console.log('JSON sin agregar producto al carrito : ', data);
 
@@ -434,21 +461,24 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         console.log("El productId esta vacio y el count esta vacio");
     } else if (select_option_weight === "" || select_option_weight === null || select_option_weight === undefined) {
 
-        data.payload.products.push({
-            productId: product_id,
-            priceId: "each",
-            count: select_option_quantity
-        });
-        console.log('data', data);
+        // data.payload.products.push({
+        //     productId: product_id,
+        //     priceId: "each",
+        //     count: select_option_quantity
+        // });
+
+        frame.contentWindow.postMessage(data_product_1, '*')
+
+        console.log('data', data_product_1);
     } else {
 
-        data.payload.products.push({
-            productId: product_id,
-            priceId: select_option_weight,
-            count: select_option_quantity
-        });
-
-        console.log('data', data);
+        // data.payload.products.push({
+        //     productId: product_id,
+        //     priceId: select_option_weight,
+        //     count: select_option_quantity
+        // });
+        frame.contentWindow.postMessage(data_product_2, '*');
+        console.log('data', data_product_2);
     }
 
 }
