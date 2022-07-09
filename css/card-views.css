@@ -153,7 +153,7 @@ background: #FFF;
     margin-bottom: 20px;
 }
 .ais-ClearRefinements-button--disabled{
-background: #000 !important;
+    background-color: #000;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
