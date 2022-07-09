@@ -127,12 +127,12 @@ text-align: center;
 
 }
 .ais-RefinementList-item--selected span{
-background: #000;
+background: #000 !important;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-weight: 700;
     border-radius: 10px;
 }
