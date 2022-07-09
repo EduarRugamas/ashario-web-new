@@ -167,7 +167,7 @@ background: #000 !important;
     font-size: 14px !important;
 }
 .ais-ClearRefinements-button{
-background-color: #FFF;
+background-color: #FFF !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
