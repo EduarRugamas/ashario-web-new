@@ -91,7 +91,7 @@ search.addWidgets([
 
 instantsearch.widgets.clearRefinements({
   container: '#container-menu',
-});
+}),
 
 
 
