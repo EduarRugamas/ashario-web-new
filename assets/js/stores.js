@@ -76,6 +76,9 @@ search.addWidgets([
         instantsearch.widgets.menuSelect({
             container: '#container-menu',
             attribute: 'category',
+            templates: {
+                defaultOption: 'See all',
+              },
 
         }),
 

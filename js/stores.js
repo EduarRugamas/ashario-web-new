@@ -78,6 +78,14 @@ search.addWidgets([
         instantsearch.widgets.refinementList({
             container: '#container-menu',
             attribute: 'category',
+              templates: {
+    item: `
+      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+        <span>{{label}} ({{count}})</span>
+      </a>
+    `,
+  },
+
 
         }),
 
