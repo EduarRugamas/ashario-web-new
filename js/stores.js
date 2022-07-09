@@ -35,7 +35,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
                             </a>
                             <div class="d-flex align-items-center">
-                                <div class="mb-1 product-price itemprice">
+                                <div class="mb-1 product-price itemprice jcitemprice">
                                     <!--   <span class="fs-5 currencyformat">CAD </span><span class="fs-5">\$${item.bucket_price}</span>-->
                                     <span class="fs-5 currencyformat">CAD </span>
                                     <span class="fs-5">\$ ${ (item.available_weights[0] === "each") ? item.price_each : (item.available_weights[0] === "gram") ? item.price_gram : (item.available_weights[0] === "eighth ounce") ? item.price_eighth_ounce : (item.available_weights[0] === "quarter ounce") ? item.price_quarter_ounce : (item.available_weights[0] === "half ounce") ? item.price_half_ounce : (item.available_weights[0] === "ounce") ? item.price_ounce : (item.available_weights[0] === "half gram") ? item.price_half_gram : '00.00'}</span>
