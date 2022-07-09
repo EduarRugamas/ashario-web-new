@@ -90,7 +90,14 @@ search.addWidgets([
         }),
 
 instantsearch.widgets.clearRefinements({
-  container: '#container-menu',
+  container: '#clear-category',
+  includedAttributes: ['category'],
+  cssClasses: {
+    root: 'clear-button-rootjc',
+    button: [
+      'clear-button-js',
+      'clear-button-jc--subclass',
+    ],
 }),
 
 
