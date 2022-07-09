@@ -89,6 +89,12 @@ search.addWidgets([
 
         }),
 
+instantsearch.widgets.clearRefinements({
+  container: '#container-menu',
+});
+
+
+
 
         instantsearch.widgets.numericMenu({
             container: '#container-price',
