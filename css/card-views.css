@@ -158,9 +158,10 @@ background: #000 !important;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
-    color: #FFFFFF !important ;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
     border-radius: 10px !important;
+    opacity: 1 !important;
 }
 .ais-ClearRefinements-button{
 background: #FFF;
@@ -168,7 +169,7 @@ background: #FFF;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
-    color: #000 !important;
+    color: #000;
     font-weight: 700 !important;
     border-radius: 10px !important;
     border: solid 1px #000 !important;
