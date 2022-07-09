@@ -136,3 +136,15 @@ background: #000;
     font-weight: 700;
     border-radius: 10px;
 }
+
+.ais-RefinementList-item span{
+background: #FFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 10px;
+    border: solid 1px #000;
+}
