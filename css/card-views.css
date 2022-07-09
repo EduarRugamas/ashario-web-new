@@ -153,14 +153,13 @@ background: #FFF;
     margin-bottom: 20px;
 }
 .ais-ClearRefinements-button--disabled{
-    background: #FFF;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #000;
-    font-weight: 700;
-    border-radius: 10px;
-    border: solid 1px #000;
-}
+    background: #FFF !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    border: solid 1px #000 !important;
 }
