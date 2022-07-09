@@ -93,4 +93,7 @@ text-align: center;
 }
 .jcitemprice{
     margin: 0 auto;
+    background: #83791717;
+    padding: 3% 5%;
+    border-radius: 15px;
 }
