@@ -114,5 +114,5 @@ text-align: center;
     color: #000;
 }
 .javiergridrow .product-info .product-action {
-    margin-top: 20px;
+    margin-top: 20px !important;
 }
