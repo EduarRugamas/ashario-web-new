@@ -184,3 +184,9 @@ background-color: #FFF;
     list-style: none !important;
     padding-left: 0px !important;
 }
+.ais-SearchBox-submitIcon{
+    display: none;
+}
+.ais-SearchBox-resetIcon{
+    display: none;
+}
