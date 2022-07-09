@@ -91,6 +91,7 @@ search.addWidgets([
 
 instantsearch.widgets.clearRefinements({
   container: '#clear-category',
+  resetLabel: 'All',
   includedAttributes: ['category'],
   cssClasses: {
     root: 'clear-button-rootjc',

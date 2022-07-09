@@ -116,3 +116,12 @@ text-align: center;
 .javiergridrow .product-info .product-action {
     margin-top: 20px !important;
 }
+.clear-button-jc--subclass{
+    background: none !important;
+    padding-left: 0px !important;
+    font-family: Roboto, sans-serif !important;
+    letter-spacing: .5px !important;
+    font-size: 14px !important;
+    color: #212529 !important;
+
+}
