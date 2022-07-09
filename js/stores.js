@@ -100,7 +100,7 @@ instantsearch.widgets.clearRefinements({
     ],
     },
 templates: {
-    resetLabel: 'Clear refinements',
+    resetLabel: 'All Lineage',
   },
 }),
 
