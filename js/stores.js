@@ -98,6 +98,7 @@ instantsearch.widgets.clearRefinements({
       'clear-button-js',
       'clear-button-jc--subclass',
     ],
+    },
 }),
 
 
