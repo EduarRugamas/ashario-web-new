@@ -13,5 +13,6 @@
     <orderEntry type="library" name="instantsearch.js" level="application" />
     <orderEntry type="library" name="instantsearch.css" level="application" />
     <orderEntry type="library" name="embed" level="application" />
+    <orderEntry type="library" name="sweetalert" level="application" />
   </component>
 </module>
