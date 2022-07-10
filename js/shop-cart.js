@@ -12,8 +12,9 @@ console.log('array item --> ', save_item_array);
 local_storage.setItem('array_items', JSON.stringify(save_item_array));
 
 let arreglo_items_saves = JSON.parse(local_storage.getItem('array_items'));
-console.log('arreglo guardado localstorage', arreglo_items_saves);
-
+arreglo_items_saves.forEach(item => {
+    console.log(item);
+})
 
 // console.log('payload --> ', data);
 
