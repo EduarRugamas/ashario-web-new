@@ -35,17 +35,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
                             </a>
                             <div class="d-flex align-items-center">
-                                <div class="mb-1 product-price itemprice jcitemprice">
-                                    <!--   <span class="fs-5 currencyformat jcpriceformat">CAD </span><span class="fs-5">\$${item.bucket_price}</span>-->
-                                    <span class="fs-5 currencyformat jcpriceformat">CAD </span>
-                                    <span class="fs-5 jcpricingnw">\$${ (item.available_weights[0] === "each") ? item.price_each : (item.available_weights[0] === "gram") ? item.price_gram : (item.available_weights[0] === "eighth ounce") ? item.price_eighth_ounce : (item.available_weights[0] === "quarter ounce") ? item.price_quarter_ounce : (item.available_weights[0] === "half ounce") ? item.price_half_ounce : (item.available_weights[0] === "ounce") ? item.price_ounce : (item.available_weights[0] === "half gram") ? item.price_half_gram : '00.00'}</span>
-                                    <span class="er-each jceachformat" style="align-items: flex-end;">${ (item.available_weights[0] === "each") ? '/each' : (item.available_weights[0] === "gram") ? '/1G' : (item.available_weights[0] === "eighth ounce") ? '/3.5G' : (item.available_weights[0] === "quarter ounce") ? '/7G' : (item.available_weights[0] === "half ounce") ? '/14G' : (item.available_weights[0] === "ounce") ? '/28G' : (item.available_weights[0] === "half gram") ? '/0.5G' : '00.00'   }</span>
+                                <div class="mb-1 product-price itemprice">
+                                    <span class="fs-5 currencyformat">CAD </span><span class="fs-5">\$${item.bucket_price}</span>
                                 </div>
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm"><i class="bx bxs-cart-add"></i>add to cart</a>
-                                    <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
+                                    <a href="product-details.html?objectID=${item.objectID}" class="btn btn-dark btn-ecomm">Product Details</a>
+                                    <a href="" class="btn btn-light btn-ecomm" data-bs-toggle="modal" data-bs-target="#QuickViewProduct" id="QuickViewModalBtn"><i class="bx bx-zoom-in"></i>Quick View</a>
                                 </div>
                             </div>
                         </div>
@@ -55,6 +52,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
         `
     ).join('')}
     `;
+
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
@@ -75,34 +73,14 @@ search.addWidgets([
             }
         }),
 
-        instantsearch.widgets.refinementList({
+        instantsearch.widgets.menuSelect({
             container: '#container-menu',
             attribute: 'category',
-              templates: {
-                    item: `
-                      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
-                        <span>{{label}} ({{count}})</span>
-                      </a>
-                    `,
-                    },
-            }),
-
-            instantsearch.widgets.clearRefinements({
-              container: '#clear-category',
-              includedAttributes: ['category'],
-              cssClasses: {
-                root: 'clear-button-rootjc',
-                button: [
-                  'clear-button-js',
-                  'clear-button-jc--subclass',
-                ],
-                },
-                templates: {
-                resetLabel: 'All Lineage',
+            templates: {
+                defaultOption: 'See all',
               },
-            }),
 
-
+        }),
 
 
         instantsearch.widgets.numericMenu({
@@ -144,8 +122,6 @@ search.start();
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
-
-
 
 
 

@@ -84,10 +84,99 @@ text-align: center;
     background: #000 !important;
 }
 .currencyformat{
-    font-weight: 700;
+    font-weight: 600;
     font-size:  1rem  !important;
-    color: #2d2d2d !important;
+    
 }
 .product-categories .ais-MenuSelect-select{
     width: 100%;
+}
+.jcitemprice{
+    margin: 0 auto;
+    background: #83791717;
+    padding: 3% 5%;
+    border-radius: 15px;
+}
+.javiergridrow .itemname{
+    text-align: center;
+
+}
+.jcitemprice .jcpriceformat{
+    color: #676767;
+    font-weight: 600;
+}
+.jcitemprice .jceachformat{
+    color: #676767;
+    font-weight: 600;
+}
+.jcitemprice .jcpricingnw{
+    font-weight: 700;
+    color: #000;
+}
+.javiergridrow .product-info .product-action {
+    margin-top: 20px !important;
+}
+/*.clear-button-jc--subclass{
+    background: none !important;
+    padding-left: 0px !important;
+    font-family: Roboto, sans-serif !important;
+    letter-spacing: .5px !important;
+    font-size: 14px !important;
+    color: #212529 !important;
+    margin-bottom: 8px !important;
+
+}*/
+.ais-RefinementList-item--selected span{
+background: #000 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.ais-RefinementList-item span{
+background: #FFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 10px;
+    border: solid 1px #000;
+}
+.ais-RefinementList-item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ais-ClearRefinements-button--disabled{
+    background-color: #000;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    color: #FFFFFF;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    opacity: 1 !important;
+        font-family: Roboto, sans-serif !important;
+    letter-spacing: .5px !important;
+    font-size: 14px !important;
+}
+.ais-ClearRefinements-button{
+background-color: #FFF;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    color: #000;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    border: solid 1px #000 !important;
+        font-family: Roboto, sans-serif !important;
+    letter-spacing: .5px !important;
+    font-size: 14px !important;
 }
