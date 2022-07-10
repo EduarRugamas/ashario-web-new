@@ -459,6 +459,8 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         storage_local.setItem('data_product_1', JSON.stringify(data_product_1));
         console.log('Se guardo en el local_storage key --> data_product_1');
 
+        window.alert('Product Save Success.......');
+
         // data.payload.products.push({
         //     productId: product_id,
         //     priceId: "each",
@@ -480,6 +482,7 @@ function add_to_cart(product_id, select_option_quantity, select_option_weight) {
         storage_local.setItem('data_product_2', JSON.stringify(data_product_2));
         console.log('Se guardo en el local_storage key --> data_product_2');
 
+        window.alert('Product Save Success.......');
 
         // data.payload.products.push({
         //     productId: product_id,
