@@ -399,94 +399,96 @@ if (images.length === 0) {
                     const active_item = document.querySelector('.active_item');
                     active_item.classList.remove('active_item');
                     this.classList.add('active_item');
-                    $container_img.src=this.src
+                    $container_img.src = this.src;
                 });
             });
       });
-
-//     function nextPhoto(){
-//     console.log('click right');
-//     if (posicionActual >= images.length - 1){
-//         posicionActual = 0;
-//     } else {
-//         posicionActual++;
-//     }
-//         $container_img.src = `${images[posicionActual]}`;
-// }
-//     $container_img.src = `${images[posicionActual]}`;
-//     intervalo = setInterval(nextPhoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
 }
 
 
 });
 
 function add_to_cart(product_id, select_option_quantity, select_option_weight) {
+    let storage_local = window.localStorage;
 
-    let data_product_2 = {
-        messageType: 'analyticsEvent',
-        payload: {
-            name: 'cartItemAdd',
-            properties: {
-                productId: product_id,
-                product: {
-                    product_id: product_id,
-                    priceId: select_option_weight,
-                    count: select_option_quantity
-                }
-            }
-        }
-    }
+    // let data_product_2 = {
+    //     messageType: 'analyticsEvent',
+    //     payload: {
+    //         name: 'cartItemAdd',
+    //         properties: {
+    //             productId: product_id,
+    //             product: {
+    //                 product_id: product_id,
+    //                 priceId: select_option_weight,
+    //                 count: select_option_quantity
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // let data_product_1 = {
+    //     messageType: 'analyticsEvent',
+    //     payload: {
+    //         name: 'cartItemAdd',
+    //         properties: {
+    //             productId: product_id,
+    //             product: {
+    //                 product_id: product_id,
+    //                 priceId: 'each',
+    //                 count: select_option_quantity
+    //             }
+    //         }
+    //     }
+    // }
 
-    let data_product_1 = {
-        messageType: 'analyticsEvent',
-        payload: {
-            name: 'cartItemAdd',
-            properties: {
-                productId: product_id,
-                product: {
-                    product_id: product_id,
-                    priceId: 'each',
-                    count: select_option_quantity
-                }
-            }
-        }
-    }
-
-    console.log('JSON sin agregar producto al carrito : ', data);
+    console.log('------- Funtion add to cart -------');
 
     if ((product_id === null || product_id === undefined) || (select_option_quantity === 0 || select_option_quantity === null || select_option_quantity === undefined)) {
         console.log("los datos vienen vacios o null o undefined");
         console.log("El productId esta vacio y el count esta vacio");
+        storage_local.clear();
     } else if (select_option_weight === "" || select_option_weight === null || select_option_weight === undefined) {
+
+        let data_product_1 = {
+            productId: product_id,
+            priceId: 'each',
+            count: select_option_quantity
+        };
+        console.log('DATA JSON TO SAVE --> ', data_product_1);
+
+        storage_local.setItem('data_product_1', JSON.stringify(data_product_1));
+        console.log('Se guardo en el local_storage key --> data_product_1');
 
         // data.payload.products.push({
         //     productId: product_id,
         //     priceId: "each",
         //     count: select_option_quantity
         // });
-        let frame = document.getElementById('jane-menu');
-        frame.contentWindow.postMessage(data_product_1, '*');
+        // let frame = document.getElementById('jane-menu');
+        // frame.contentWindow.postMessage(data_product_1, '*');
 
-        console.log('data', data_product_1);
+
     } else {
+
+        let data_product_2 = {
+            productId: product_id,
+            priceId: select_option_weight,
+            count: select_option_quantity
+        };
+        console.log('DATA JSON TO SAVE --> ', data_product_2);
+
+        storage_local.setItem('data_product_2', JSON.stringify(data_product_2));
+        console.log('Se guardo en el local_storage key --> data_product_2');
+
 
         // data.payload.products.push({
         //     productId: product_id,
         //     priceId: select_option_weight,
         //     count: select_option_quantity
         // });
-        let frame = document.getElementById('jane-menu');
-        frame.contentWindow.postMessage(data_product_2, '*');
-        console.log('data', data_product_2);
+        // let frame = document.getElementById('jane-menu');
+        // frame.contentWindow.postMessage(data_product_2, '*');
+        // console.log('data', data_product_2);
+
     }
-
 }
-
-
-
-
-
-
-
-
-
