@@ -168,7 +168,7 @@ background-color: #FFF !important;
     font-size: 14px !important;
 }
 
-.clear-button-jc--subclass .ais-ClearRefinements-button--disabled{
+.ais-ClearRefinements-button--disabled{
     background-color: #000000 !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
