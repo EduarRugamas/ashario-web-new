@@ -10,7 +10,9 @@ let save_item_array = products.push(item_product_received);
 console.log('array item --> ', save_item_array);
 
 local_storage.setItem('array_items', JSON.stringify(save_item_array));
-console.log('arreglo guardado localstorage', JSON.parse(local_storage.getItem('array_items')));
+
+let arreglo_items_saves = JSON.parse(local_storage.getItem('array_items'));
+console.log('arreglo guardado localstorage', arreglo_items_saves);
 
 
 // console.log('payload --> ', data);
