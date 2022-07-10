@@ -152,8 +152,8 @@ background: #FFF;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.ais-ClearRefinements-button--disabled{
-    background-color: #000;
+.ais-ClearRefinements-button--disabled button[disabled]{
+    background-color: #000 !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
@@ -167,7 +167,7 @@ background: #FFF;
     font-size: 14px !important;
 }
 .ais-ClearRefinements-button{
-background-color: #FFF;
+background-color: #FFF !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     padding-left: 20px !important;
