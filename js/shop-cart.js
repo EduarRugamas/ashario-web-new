@@ -1,4 +1,17 @@
 import { data } from '../config/data.js';
+const local_storage = window.localStorage;
+
+
+if (local_storage.getItem('data_product_1') === true) {
+    console.log('Se recibio el item product 1');
+    console.log(JSON.parse(local_storage.getItem('data_product_1')));
+} else if (local_storage.getItem('data_product_2') === true) {
+    console.log('Se recibio el item product 1');
+    console.log(JSON.parse(local_storage.getItem('data_product_2')));
+}
+
+// let item_product_received = local_storage.getItem()
+
 
 window.addEventListener("message", receiveMessage, false);
 
