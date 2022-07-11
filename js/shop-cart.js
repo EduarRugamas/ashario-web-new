@@ -8,10 +8,15 @@ if (local_storage.getItem('cart')){
 
 console.log(cart);
 
-data.payload.products.push(cart);
+if (data.payload.products.length === 0 ){
+    window.addEventListener("message", receiveMessage, false);
+}else {
+    data.payload.products.push(cart);
+    window.addEventListener("message", receiveMessage, false);
+}
 
 
-window.addEventListener("message", receiveMessage, false);
+
 
 function receiveMessage(event) {
     let payload = event.data && event.data.payload;
