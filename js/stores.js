@@ -86,6 +86,17 @@ search.addWidgets([
                     `,
                     },
             }),
+        instantsearch.widgets.refinementList({
+            container: '#jcweight-list',
+            attribute: 'available_weights',
+              templates: {
+                    item: `
+                      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+                        <span>{{label}} ({{count}})</span>
+                      </a>
+                    `,
+                    },
+            }),
 
             instantsearch.widgets.clearRefinements({
               container: '#clear-category',
