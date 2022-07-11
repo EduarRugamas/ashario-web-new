@@ -60,7 +60,7 @@ const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 //   fin de widgets custom o personalizados
 
-var transformObject = 
+var transformObject =
 {
   'half gram': '0.5G',
   'gram': '1G',
@@ -93,7 +93,7 @@ search.addWidgets([
             transformItems(items) {
       return items.map(item => ({
         ...item,
-        name: item.name.toUpperCase(),
+        name: item.name.toUpperCase,
       }));
       },
             attribute: 'category',
