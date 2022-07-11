@@ -11,8 +11,13 @@ console.log(cart);
 if (data.payload.products.length === 0 ){
     window.addEventListener("message", receiveMessage, false);
 }else {
-    data.payload.products.push(cart);
-    window.addEventListener("message", receiveMessage, false);
+
+    for (let items in cart){
+        console.log('elemeto en el carrito',items)
+    }
+
+    // data.payload.products.push(cart);
+    // window.addEventListener("message", receiveMessage, false);
 }
 
 
