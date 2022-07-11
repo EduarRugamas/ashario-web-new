@@ -60,19 +60,6 @@ const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 //   fin de widgets custom o personalizados
 
-var transformObject = 
-{
-  'half gram': '0.5G',
-  'gram': '1G',
-  'two gram': '2G',
-  'eighth ounce': '3.5G',
-  'quarter ounce': '7G',
-  'half ounce': '14G',
-  'ounce': '28G',
-}
-
-
-
 
 search.addWidgets([
 
@@ -90,12 +77,6 @@ search.addWidgets([
 
         instantsearch.widgets.refinementList({
             container: '#container-menu',
-            transformItems(items) {
-      return items.map(item => ({
-        ...item,
-        name: item.name.toUpperCase(),
-      }));
-      },
             attribute: 'category',
               templates: {
                     item: `
