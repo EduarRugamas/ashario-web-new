@@ -95,6 +95,7 @@ search.addWidgets([
         ...item,
         name: item.name.toUpperCase(),
       }));
+      },
             attribute: 'category',
               templates: {
                     item: `
