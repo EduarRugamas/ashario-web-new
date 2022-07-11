@@ -60,6 +60,19 @@ const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 //   fin de widgets custom o personalizados
 
+var transformObject = 
+{
+  'half gram': '0.5G',
+  'gram': '1G',
+  'two gram': '2G',
+  'eighth ounce': '3.5G',
+  'quarter ounce': '7G',
+  'half ounce': '14G',
+  'ounce': '28G',
+}
+
+
+
 
 search.addWidgets([
 
@@ -77,6 +90,12 @@ search.addWidgets([
 
         instantsearch.widgets.refinementList({
             container: '#container-menu',
+            transformItems(items) {
+      return items.map(item => ({
+        ...item,
+        name: item.name.toUpperCase(),
+      }));
+      },
             attribute: 'category',
               templates: {
                     item: `
@@ -86,7 +105,6 @@ search.addWidgets([
                     `,
                     },
             }),
-
             instantsearch.widgets.clearRefinements({
               container: '#clear-category',
               includedAttributes: ['category'],
@@ -101,34 +119,60 @@ search.addWidgets([
                 resetLabel: 'All Lineage',
               },
             }),
+        instantsearch.widgets.refinementList({
+            container: '#jcweight-list',
+            attribute: 'available_weights',
+              templates: {
+                    item: `
+                      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+                        <span>{{label}} ({{count}})</span>
+                      </a>
+                    `,
+                    },
+            }),
+
+            instantsearch.widgets.clearRefinements({
+              container: '#clear-weight',
+              includedAttributes: ['available_weights'],
+              cssClasses: {
+                root: 'clear-button-rootjc',
+                button: [
+                  'clear-button-js',
+                  'clear-button-jc--subclass',
+                ],
+                },
+                templates: {
+                resetLabel: 'All Weights',
+              },
+            }),
 
 
 
 
-        instantsearch.widgets.numericMenu({
-            container: '#container-price',
-            attribute: 'bucket_price',
-            items: [
-                {
-                    label: 'All'
-                },
-                {
-                    label: 'Under $20', end: 20
-                },
-                {
-                    label: '$20 - $40', start: 20, end: 40
-                },
-                {
-                    label: '$40 - $60', start: 40, end: 60
-                },
-                {
-                    label: '$60 - $80', start: 60, end: 80
-                },
-                {
-                    label: '$80 & above', start: 80
-                }
-            ]
-        }),
+//        instantsearch.widgets.numericMenu({
+//            container: '#container-price',
+ //           attribute: 'bucket_price',
+ //           items: [
+  //              {
+ //                   label: 'All'
+ //               },
+ //               {
+ //                   label: 'Under $20', end: 20
+ //               },
+ //               {
+ //                   label: '$20 - $40', start: 20, end: 40
+ //               },
+ //               {
+ //                   label: '$40 - $60', start: 40, end: 60
+ //              },
+ //               {
+ //                   label: '$60 - $80', start: 60, end: 80
+ //               },
+ //               {
+ //                   label: '$80 & above', start: 80
+ //               }
+ //           ]
+ //       }),
 
         CustomHits({container: document.querySelector('#container-hits')}),
 
