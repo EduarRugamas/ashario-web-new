@@ -86,6 +86,20 @@ search.addWidgets([
                     `,
                     },
             }),
+            instantsearch.widgets.clearRefinements({
+              container: '#clear-category',
+              includedAttributes: ['category'],
+              cssClasses: {
+                root: 'clear-button-rootjc',
+                button: [
+                  'clear-button-js',
+                  'clear-button-jc--subclass',
+                ],
+                },
+                templates: {
+                resetLabel: 'All Lineage',
+              },
+            }),
         instantsearch.widgets.refinementList({
             container: '#jcweight-list',
             attribute: 'available_weights',
@@ -99,8 +113,8 @@ search.addWidgets([
             }),
 
             instantsearch.widgets.clearRefinements({
-              container: '#clear-category',
-              includedAttributes: ['category'],
+              container: '#clear-weight',
+              includedAttributes: ['available_weights'],
               cssClasses: {
                 root: 'clear-button-rootjc',
                 button: [
@@ -109,7 +123,7 @@ search.addWidgets([
                 ],
                 },
                 templates: {
-                resetLabel: 'All Lineage',
+                resetLabel: 'All Weights',
               },
             }),
 
