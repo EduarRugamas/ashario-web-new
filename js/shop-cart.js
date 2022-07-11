@@ -8,6 +8,8 @@ if (local_storage.getItem('cart')){
 
 console.log(cart);
 
+data.payload.products.push(cart);
+
 
 window.addEventListener("message", receiveMessage, false);
 
