@@ -26,7 +26,7 @@ index.search('', {
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item">
                                         <a href="/views/shop-cart.html" class="nav-link position-relative cart-link">
-                                            <span class="alert-count" id="count_quantity_cart"></span>
+                                            <span class="alert-count" id="count_quantity_cart">0</span>
                                             <i class="bx bx-shopping-bag"></i>
                                         </a>
                                     </li>
@@ -353,29 +353,32 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
  let btn_add_to_cart = document.getElementById('add-to-cart');
 
+    let storage_local = window.localStorage;
+    let count = 0;
+    let cart = {};
+
+
+    if (storage_local.getItem('count')) {
+        count = parseInt(storage_local.getItem('count'));
+    }
+
+
+    if (storage_local.getItem('cart')){
+        cart = JSON.parse(storage_local.getItem('cart'));
+    }
+
+    updateCart();
+
+    btn_add_to_cart.addEventListener('click', btn_add_cart);
+
  function btn_add_cart () {
      const product_id = hits[0].product_id;
-     let storage_local = window.localStorage;
-     let count = 0;
-     let cart = {};
 
      let selected_option_quantity = parseInt(document.getElementById('quantity').value);
      let selected_option_weight = document.getElementById('select-weight').value;
      selected_option_weight = selected_option_weight.replace(/ /g, '_');
 
      console.log(`Informacion a enviar: -> ${product_id}, ${selected_option_quantity}, ${selected_option_weight} `);
-
-     //acciones a enviar al carrito
-     if (storage_local.getItem('count')) {
-         count = parseInt(storage_local.getItem('count'));
-     }
-
-
-     if (storage_local.getItem('cart')){
-         cart = JSON.parse(storage_local.getItem('cart'));
-     }
-
-     updateCart();
 
      console.log('------- Funtion add to cart -------');
 
@@ -387,7 +390,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
         if (product_id in cart) {
 
-            cart[product_id].count++;
+            cart[product_id].count = selected_option_quantity;
             console.log(cart);
 
         }else {
@@ -416,7 +419,8 @@ $select_quantity.addEventListener('change', selected_quantity_change);
      } else {
 
          if (product_id in cart) {
-             cart[product_id].count++;
+             cart[product_id].count = selected_option_quantity;
+             console.log('el producto se modifico el quantity', cart);
          }else {
              let data_product_2 = {
                  productId: product_id,
@@ -433,7 +437,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
          storage_local.setItem('cart', JSON.stringify(cart));
 
-         console.log('Se guardo en el local_storage key --> data_product_1');
+         console.log('Se guardo en el local_storage key --> data_product_2');
 
          updateCart();
 
@@ -441,13 +445,13 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
      }
 
-     function updateCart() {
-         document.getElementById('count_quantity_cart').textContent = count;
-         storage_local.setItem('count', count);
-     }
+
  }
 
- btn_add_to_cart.addEventListener('click', btn_add_cart);
+ function updateCart() {
+        document.getElementById('count_quantity_cart').textContent = count;
+        storage_local.setItem('count', count);
+ }
 
 
 const images = hits[0].image_urls;
