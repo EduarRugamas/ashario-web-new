@@ -26,7 +26,7 @@ index.search('', {
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item">
                                         <a href="/views/shop-cart.html" class="nav-link position-relative cart-link">
-                                            <span class="alert-count" id="count_quantity_cart">8</span>
+                                            <span class="alert-count" id="count_quantity_cart"></span>
                                             <i class="bx bx-shopping-bag"></i>
                                         </a>
                                     </li>
@@ -355,13 +355,96 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
  function btn_add_cart () {
      const product_id = hits[0].product_id;
+     let storage_local = window.localStorage;
+     let count = 0;
+     let cart = {};
+
      let selected_option_quantity = parseInt(document.getElementById('quantity').value);
      let selected_option_weight = document.getElementById('select-weight').value;
      selected_option_weight = selected_option_weight.replace(/ /g, '_');
 
-     console.log(`Informacion a enviar: -> ${product_id}, ${selected_option_quantity}, ${selected_option_weight} `)
+     console.log(`Informacion a enviar: -> ${product_id}, ${selected_option_quantity}, ${selected_option_weight} `);
 
-     add_to_cart(product_id, selected_option_quantity, selected_option_weight);
+     //acciones a enviar al carrito
+     if (storage_local.getItem('count')) {
+         count = parseInt(storage_local.getItem('count'));
+     }
+
+
+     if (storage_local.getItem('cart')){
+         cart = JSON.parse(storage_local.getItem('cart'));
+     }
+
+     updateCart();
+
+     console.log('------- Funtion add to cart -------');
+
+     if ((product_id === null || product_id === undefined) || (selected_option_quantity === 0 || selected_option_quantity === null || selected_option_quantity === undefined)) {
+         console.log("los datos vienen vacios o null o undefined");
+         console.log("El productId esta vacio y el count esta vacio");
+         storage_local.clear();
+     } else if (selected_option_weight === "" || selected_option_weight === null || selected_option_weight === undefined) {
+
+        if (product_id in cart) {
+
+            cart[product_id].count++;
+            console.log(cart);
+
+        }else {
+
+            let data_product_1 = {
+                productId: product_id,
+                priceId: 'each',
+                count: selected_option_quantity
+            };
+            console.log('DATA JSON TO SAVE --> ', data_product_1);
+            cart[product_id] = data_product_1;
+        }
+
+        count++;
+
+        console.log(cart);
+
+        storage_local.setItem('cart', JSON.stringify(cart));
+
+        console.log('Se guardo en el local_storage key --> data_product_1');
+
+        updateCart();
+
+        swal('Success!', 'Product Save success.....', 'success');
+
+     } else {
+
+         if (product_id in cart) {
+             cart[product_id].count++;
+         }else {
+             let data_product_2 = {
+                 productId: product_id,
+                 priceId: selected_option_weight,
+                 count: selected_option_quantity
+             };
+             console.log('DATA JSON TO SAVE --> ', data_product_2);
+             cart[product_id] = data_product_2;
+         }
+
+         count++;
+
+         console.log(cart);
+
+         storage_local.setItem('cart', JSON.stringify(cart));
+
+         console.log('Se guardo en el local_storage key --> data_product_1');
+
+         updateCart();
+
+         swal('Success!', 'Product Save success.....', 'success');
+
+     }
+
+     function updateCart() {
+         document.getElementById('count_quantity_cart').textContent = count;
+         storage_local.setItem('count', count);
+     }
  }
 
  btn_add_to_cart.addEventListener('click', btn_add_cart);
@@ -369,13 +452,8 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
 const images = hits[0].image_urls;
 
-let posicionActual = 0;
 let $container_img = document.querySelector('#imagen_carusel');
 let miniatura_img = document.querySelector('#selector-imgs-products');
-
-
-const TIEMPO_INTERVALO_MILESIMAS_SEG = 9000;
-let intervalo;
 
 if (images.length === 0) {
     $container_img.src = '../assets/images/errors-images/image-not-found.jpeg';
@@ -404,97 +482,26 @@ if (images.length === 0) {
             });
       });
 }
-
-
 });
 
+
+
+
+
 function add_to_cart(product_id, select_option_quantity, select_option_weight) {
+    //id de quantity items cart add #count_quantity_cart
     let storage_local = window.localStorage;
+    let count = 0;
+    let cart = {};
 
-    // let data_product_2 = {
-    //     messageType: 'analyticsEvent',
-    //     payload: {
-    //         name: 'cartItemAdd',
-    //         properties: {
-    //             productId: product_id,
-    //             product: {
-    //                 product_id: product_id,
-    //                 priceId: select_option_weight,
-    //                 count: select_option_quantity
-    //             }
-    //         }
-    //     }
-    // }
-    //
-    // let data_product_1 = {
-    //     messageType: 'analyticsEvent',
-    //     payload: {
-    //         name: 'cartItemAdd',
-    //         properties: {
-    //             productId: product_id,
-    //             product: {
-    //                 product_id: product_id,
-    //                 priceId: 'each',
-    //                 count: select_option_quantity
-    //             }
-    //         }
-    //     }
-    // }
-
-    console.log('------- Funtion add to cart -------');
-
-    if ((product_id === null || product_id === undefined) || (select_option_quantity === 0 || select_option_quantity === null || select_option_quantity === undefined)) {
-        console.log("los datos vienen vacios o null o undefined");
-        console.log("El productId esta vacio y el count esta vacio");
-        storage_local.clear();
-    } else if (select_option_weight === "" || select_option_weight === null || select_option_weight === undefined) {
-
-        let data_product_1 = {
-            productId: product_id,
-            priceId: 'each',
-            count: select_option_quantity
-        };
-        console.log('DATA JSON TO SAVE --> ', data_product_1);
-
-        storage_local.setItem('data_product_1', JSON.stringify(data_product_1));
-        console.log('Se guardo en el local_storage key --> data_product_1');
-
-        // window.alert('Product Save Success.......');
-        swal('Success!', 'Product Save success.....', 'success');
-
-        // data.payload.products.push({
-        //     productId: product_id,
-        //     priceId: "each",
-        //     count: select_option_quantity
-        // });
-        // let frame = document.getElementById('jane-menu');
-        // frame.contentWindow.postMessage(data_product_1, '*');
-
-
-    } else {
-
-        let data_product_2 = {
-            productId: product_id,
-            priceId: select_option_weight,
-            count: select_option_quantity
-        };
-        console.log('DATA JSON TO SAVE --> ', data_product_2);
-
-        storage_local.setItem('data_product_2', JSON.stringify(data_product_2));
-        console.log('Se guardo en el local_storage key --> data_product_2');
-
-        // window.alert('Product Save Success.......');
-        swal('Success!', 'Product Save success.....', 'success');
-
-
-        // data.payload.products.push({
-        //     productId: product_id,
-        //     priceId: select_option_weight,
-        //     count: select_option_quantity
-        // });
-        // let frame = document.getElementById('jane-menu');
-        // frame.contentWindow.postMessage(data_product_2, '*');
-        // console.log('data', data_product_2);
-
+    if (storage_local.getItem('count')) {
+        count = parseInt(storage_local.getItem('count'));
     }
+
+
+    if (storage_local.getItem('cart')){
+        cart = JSON.parse(storage_local.getItem('cart'));
+    }
+
+
 }
