@@ -7,33 +7,19 @@ const search = instantsearch({
     searchClient
 });
 
+search.use(instantsearch.middlewares.createInsightsMiddleware({
+        insightsClient: window.aa
+    })
+);
 
-
+aa('setUserToken', 'user-1')
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
 const HitsRender = (renderOptions, isFirstRender) => {
-    const {hits, results, sendEvent, widgetParams} = renderOptions;
+    const {hits, results, bindEvent, widgetParams} = renderOptions;
 
     console.log('aqui estan los objetos de el hits', hits);
-
-
-    if (isFirstRender) {
-
-        let div_2 = document.createElement('div');
-        div_2.className='d-grid gap-2';
-
-        let link_1 = document.createElement('a');
-        link_1.className='btn btn-dark btn-ecomm';
-        link_1.textContent='add to cart';
-        link_1.id='btn_add_to_cart_grid';
-
-        div_2.appendChild(link_1);
-
-        document.querySelector('#container-hits').appendChild(div_2);
-
-
-    }
 
 
     //${ item.image_urls.length > 0 ? item.image_urls[0] : '../assets/images/errors-images/image-not-found.jpeg'}
@@ -55,8 +41,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 <p class="product-catergory font-13 mb-1 itemsubtype">${item.brand_subtype}</p>
                             </a>
                             <a href="product-details.html?objectID=${item.objectID}">
-                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item
-        })}</h6>
+                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
                             </a>
                             <div class="d-flex align-items-center">
                                 <div class="mb-1 product-price itemprice jcitemprice">
@@ -67,10 +52,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 </div>
                             </div>
                             <div class="product-action mt-2" id="content">
-                             <!--   <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
+                               <div class="d-grid gap-2">
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" ${bindEvent(
+                                        'click',
+                                        hits,
+                                        'product add to cart'
+                                    )}><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
-                                </div> -->
+                               </div> 
                             </div> 
                         </div>
                     </div>
