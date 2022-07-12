@@ -44,7 +44,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                 </div>
                             </div>
@@ -66,6 +66,14 @@ search.addWidgets([
     instantsearch.widgets.index({indexName: 'menu-products-production'}).addWidgets([
 
         instantsearch.widgets.configure({filters: 'kind:flower AND store_id:4434'}),
+
+        instantsearch.search.addWidgets({
+            init: function (opts) {
+                $('#container-hits').on('click', '#add_to_cart_btn', function (e) {
+                    console.log('se clickeo el btn del grid ');
+                });
+            }
+        }),
 
         instantsearch.widgets.searchBox({
             container: '#searchBox',
