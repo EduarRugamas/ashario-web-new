@@ -1,5 +1,6 @@
 import {searchClient} from '../config/config.js';
-
+import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
+import aa from 'search-insights';
 let storage_local = window.localStorage;
 
 const search = instantsearch({
@@ -7,11 +8,16 @@ const search = instantsearch({
     searchClient
 });
 
+const insightsMiddleware = createInsightsMiddleware({
+    insightsClient: aa
+});
+
+search.use(insightsMiddleware);
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
 const HitsRender = (renderOptions, isFirstRender) => {
-    const {hits, results, BindEvent, widgetParams} = renderOptions;
+    const {hits, results, sendEvent, widgetParams} = renderOptions;
 
     console.log('aqui estan los objetos de el hits', hits);
 
@@ -47,7 +53,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" onclick="${sendEvent('click', hits, 'product add to cart')}"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                 </div>
                             </div>
@@ -161,15 +167,13 @@ search.addWidgets([
     instantsearch.widgets.pagination({
         container: '#pagination-container',
     }),
-
-    search.on('click', function () {
-        $('#container-hits').on('click','#add_to_cart_btn',function (e) {
-            console.log('se clickeo el btn add to cart en el grid de products');
-        })
-    }),
-
-
 ]);
+
+ instantsearch.search.addWidget({
+     init: function () {
+
+     }
+ })
 
 search.start();
 
