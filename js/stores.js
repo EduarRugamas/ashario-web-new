@@ -66,8 +66,6 @@ const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
 search.addWidgets([
 
-    instantsearch.widgets.index({indexName: 'menu-products-production'}).addWidgets([
-
         instantsearch.widgets.configure({filters: 'kind:flower AND store_id:4434'}),
 
 
@@ -163,12 +161,13 @@ search.addWidgets([
     instantsearch.widgets.pagination({
         container: '#pagination-container',
     }),
-        search.on('click', function () {
-            $('#container-hits').on('click','#add_to_cart_btn',function (e) {
-                console.log('se clickeo el btn add to cart en el grid de products');
-            })
-        }),
-]),
+
+    search.on('click', function () {
+        $('#container-hits').on('click','#add_to_cart_btn',function (e) {
+            console.log('se clickeo el btn add to cart en el grid de products');
+        })
+    }),
+
 
 ]);
 
