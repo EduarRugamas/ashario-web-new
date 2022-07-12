@@ -30,7 +30,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
         div_2.appendChild(link_1);
 
-        document.querySelector('#content').appendChild(div_2);
+        document.querySelector('#container-hits').appendChild(div_2);
 
 
     }
