@@ -11,7 +11,7 @@ const insightsMiddleware = instantsearch.middlewares.createInsightsMiddleware({
     insightsClient: window.aa,
 })
 
-search.use(insightsMiddleware);
+
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
@@ -167,6 +167,8 @@ search.addWidgets([
 ]);
 
 search.start();
+
+search.use(insightsMiddleware);
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
