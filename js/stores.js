@@ -5,7 +5,6 @@ let storage_local = window.localStorage;
 const search = instantsearch({
     indexName: 'menu-products-production',
     searchClient,
-    insightsClient:window.aa
 });
 
 search.use(instantsearch.middlewares.createInsightsMiddleware({
@@ -13,7 +12,10 @@ search.use(instantsearch.middlewares.createInsightsMiddleware({
     })
 );
 
-aa('setUserToken', 'user-1')
+aa('init', {
+    appId: 'VFM4X0N23A',
+    apiKey: '621cb93dc0fd5c6442f9ce2f1d82e44f'
+})
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
