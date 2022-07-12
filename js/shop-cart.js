@@ -17,11 +17,11 @@ for (let item in cart) {
     console.log('elemeto en el carrito', cart[item]);
     data.payload.products.push(cart[item]);
     window.addEventListener("message", receiveMessage, false);
-    window.addEventListener("message", DeleteItemCart, false);
+
 }
 
 // data.payload.products.push(cart);
-
+window.addEventListener("message", DeleteItemCart, false);
 
 
 function receiveMessage(event) {
