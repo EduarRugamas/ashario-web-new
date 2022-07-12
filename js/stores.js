@@ -15,7 +15,8 @@ search.use(instantsearch.middlewares.createInsightsMiddleware({
 aa('init', {
     appId: 'VFM4X0N23A',
     apiKey: '621cb93dc0fd5c6442f9ce2f1d82e44f'
-})
+});
+aa('setUserToken', 'user-1');
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
