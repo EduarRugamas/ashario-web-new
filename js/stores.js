@@ -59,7 +59,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                <div class="d-grid gap-2">
                                     <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" ${bindEvent(
                                         'click',
-                                        hits,
+                                        item,
                                         'product add to cart'
                                     )}><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
