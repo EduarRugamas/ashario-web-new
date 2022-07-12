@@ -12,8 +12,8 @@ if (data.payload.products.length === 0 ){
     window.addEventListener("message", receiveMessage, false);
 }
 
-for (let items in cart){
-        console.log('elemeto en el carrito',items)
+for (let item in cart) {
+        console.log('elemeto en el carrito',cart[item]);
 }
 
     // data.payload.products.push(cart);
