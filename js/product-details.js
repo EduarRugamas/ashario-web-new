@@ -439,6 +439,8 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
          console.log('Se guardo en el local_storage key --> data_product_2');
 
+         console.log(JSON.stringify(cart));
+
          updateCart();
 
          swal('Success!', 'Product Save success.....', 'success');
