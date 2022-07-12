@@ -1,6 +1,5 @@
 import {searchClient} from '../config/config.js';
-import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
-import aa from 'search-insights';
+
 let storage_local = window.localStorage;
 
 const search = instantsearch({
@@ -8,9 +7,9 @@ const search = instantsearch({
     searchClient
 });
 
-const insightsMiddleware = createInsightsMiddleware({
-    insightsClient: aa
-});
+const insightsMiddleware = instantsearch.middlewares.createInsightsMiddleware({
+    insightsClient: window.aa,
+})
 
 search.use(insightsMiddleware);
 //  widgets custom o personalizados
@@ -169,14 +168,7 @@ search.addWidgets([
     }),
 ]);
 
- instantsearch.search.addWidget({
-     init: function () {
-
-     }
- })
-
 search.start();
-
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
