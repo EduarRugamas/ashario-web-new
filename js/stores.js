@@ -73,8 +73,6 @@ search.addWidgets([
 
         instantsearch.widgets.configure({filters: 'kind:flower AND store_id:4434'}),
 
-
-
         instantsearch.widgets.searchBox({
             container: '#searchBox',
             placeholder: 'Search for Products',
