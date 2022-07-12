@@ -20,6 +20,29 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
     console.log('aqui estan los objetos de el hits', hits);
 
+
+    if (isFirstRender) {
+        let div_1 = document.createElement('div');
+        div_1.className='product-action mt-2';
+
+        let div_2 = document.createElement('div');
+        div_2.className='d-grid gap-2';
+
+        div_1.appendChild(div_2);
+
+        let link_1 = document.createElement('a');
+        link_1.className='btn btn-dark btn-ecomm';
+        link_1.textContent='add to cart';
+        link_1.id='btn_add_to_cart_grid';
+
+        div_2.appendChild(link_1);
+
+        document.querySelector('#container-hits').appendChild(div_1);
+
+
+    }
+
+
     //${ item.image_urls.length > 0 ? item.image_urls[0] : '../assets/images/errors-images/image-not-found.jpeg'}
     // ${ item.image_urls.length > 0 ? intervalo = setInterval(() => { let container = document.getElementById('imagen-product'); if (posicionActual >= item.image_urls.length - 1) {posicionActual = 0;}else { posicionActual++;}  container.src = `${item.image_urls[posicionActual]}`; }, TIEMPO_INTERVALO_MILESIMAS_SEG) : '../assets/images/errors-images/image-not-found.jpeg'}
     let posicionActual = 0;
@@ -50,12 +73,12 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                     <span class="er-each jceachformat" style="align-items: flex-end;">${(item.available_weights[0] === "each") ? '/each' : (item.available_weights[0] === "gram") ? '/1G' : (item.available_weights[0] === "eighth ounce") ? '/3.5G' : (item.available_weights[0] === "quarter ounce") ? '/7G' : (item.available_weights[0] === "half ounce") ? '/14G' : (item.available_weights[0] === "ounce") ? '/28G' : (item.available_weights[0] === "half gram") ? '/0.5G' : '00.00'}</span>
                                 </div>
                             </div>
-                            <div class="product-action mt-2">
+<!--                        <div class="product-action mt-2">
                                 <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" onclick="${sendEvent('click', hits, 'product add to cart')}"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
