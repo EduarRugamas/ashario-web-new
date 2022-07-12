@@ -7,9 +7,6 @@ const search = instantsearch({
     searchClient
 });
 
-const insightsMiddleware = instantsearch.middlewares.createInsightsMiddleware({
-    insightsClient: window.aa,
-})
 
 
 //  widgets custom o personalizados
@@ -190,8 +187,6 @@ search.addWidgets([
 ]);
 
 search.start();
-
-search.use(insightsMiddleware);
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
