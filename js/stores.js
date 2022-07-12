@@ -57,11 +57,11 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" ${bindEvent(
+                                    <button class="btn btn-dark btn-ecomm" id="add_to_cart_btn" ${bindEvent(
                                         'click',
                                         item,
                                         'product add to cart'
-                                    )}><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    )}><i class="bx bxs-cart-add"></i>add to cart</button>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
