@@ -19,6 +19,16 @@ const HitsRender = (renderOptions, isFirstRender) => {
     // ${ item.image_urls.length > 0 ? intervalo = setInterval(() => { let container = document.getElementById('imagen-product'); if (posicionActual >= item.image_urls.length - 1) {posicionActual = 0;}else { posicionActual++;}  container.src = `${item.image_urls[posicionActual]}`; }, TIEMPO_INTERVALO_MILESIMAS_SEG) : '../assets/images/errors-images/image-not-found.jpeg'}
     let posicionActual = 0;
 
+    if (isFirstRender) {
+        const btn_add_to_cart = document.getElementById('add_to_cart_btn');
+
+        btn_add_to_cart.addEventListener('click', ()=> {
+            console.log('se clickeo el btn de add to cart desde el grid');
+        });
+    }
+
+
+
     widgetParams.container.innerHTML = `
             ${hits.map(item =>
         `
@@ -165,18 +175,8 @@ search.addWidgets([
         container: '#pagination-container',
     }),
 ]),
+
 ]);
-
-instantsearch.search.addWidget({
-    init: function (opts) {
-        $('#container-hits').on('click', '#add_to_cart_btn', function (e) {
-            e.stopPropagation();
-            console.log('se clickeo el btn add to cart del grid products');
-        });
-    }
-});
-
-
 
 search.start();
 
