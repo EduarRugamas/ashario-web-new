@@ -19,13 +19,9 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
 
     if (isFirstRender) {
-        let div_1 = document.createElement('div');
-        div_1.className='product-action mt-2';
 
         let div_2 = document.createElement('div');
         div_2.className='d-grid gap-2';
-
-        div_1.appendChild(div_2);
 
         let link_1 = document.createElement('a');
         link_1.className='btn btn-dark btn-ecomm';
@@ -34,7 +30,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
         div_2.appendChild(link_1);
 
-        document.querySelector('#container-hits').appendChild(div_1);
+        document.querySelector('#content').appendChild(div_2);
 
 
     }
@@ -70,12 +66,12 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                     <span class="er-each jceachformat" style="align-items: flex-end;">${(item.available_weights[0] === "each") ? '/each' : (item.available_weights[0] === "gram") ? '/1G' : (item.available_weights[0] === "eighth ounce") ? '/3.5G' : (item.available_weights[0] === "quarter ounce") ? '/7G' : (item.available_weights[0] === "half ounce") ? '/14G' : (item.available_weights[0] === "ounce") ? '/28G' : (item.available_weights[0] === "half gram") ? '/0.5G' : '00.00'}</span>
                                 </div>
                             </div>
-<!--                        <div class="product-action mt-2">
-                                <div class="d-grid gap-2">
+                            <div class="product-action mt-2" id="content">
+                             <!--   <div class="d-grid gap-2">
                                     <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
-                                </div>
-                            </div> -->
+                                </div> -->
+                            </div> 
                         </div>
                     </div>
                 </div>
