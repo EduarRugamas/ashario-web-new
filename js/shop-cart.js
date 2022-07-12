@@ -17,10 +17,11 @@ for (let item in cart) {
     console.log('elemeto en el carrito', cart[item]);
     data.payload.products.push(cart[item]);
     window.addEventListener("message", receiveMessage, false);
+    window.addEventListener("message", DeleteItemCart, false);
 }
 
 // data.payload.products.push(cart);
-window.addEventListener("message", DeleteItemCart, false);
+
 
 
 function receiveMessage(event) {
@@ -41,5 +42,11 @@ function DeleteItemCart (event) {
         console.log('removing from cart item');
         console.table(payload);
         //ejecutar funcion que eliminara el producto del localstorage
+        removeItemLocalStorage(payload.properties.productId);
     }
+}
+
+function removeItemLocalStorage (productId) {
+    local_storage.removeItem(productId);
+    console.log(cart);
 }
