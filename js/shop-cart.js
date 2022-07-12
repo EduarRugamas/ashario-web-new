@@ -1,26 +1,26 @@
 import {data} from '../config/data.js';
+
 let local_storage = window.localStorage;
 let cart = {};
 
-if (local_storage.getItem('cart')){
+if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
 }
 
 console.log(cart);
 
-if (data.payload.products.length === 0 ){
+if (data.payload.products.length === 0) {
     window.addEventListener("message", receiveMessage, false);
 }
 
 for (let item in cart) {
-        console.log('elemeto en el carrito',cart[item]);
+    console.log('elemeto en el carrito', cart[item]);
+    data.payload.products.push(cart[item]);
+    window.addEventListener("message", receiveMessage, false);
 }
 
-    // data.payload.products.push(cart);
-    // window.addEventListener("message", receiveMessage, false);
-
-
-
+// data.payload.products.push(cart);
+// window.addEventListener("message", receiveMessage, false);
 
 
 function receiveMessage(event) {

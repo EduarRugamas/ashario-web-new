@@ -410,7 +410,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
         storage_local.setItem('cart', JSON.stringify(cart));
 
-        console.log('Se guardo en el local_storage key --> data_product_1');
+        console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
 
         updateCart();
 
@@ -437,7 +437,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
          storage_local.setItem('cart', JSON.stringify(cart));
 
-         console.log('Se guardo en el local_storage key --> data_product_2');
+         console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
 
          console.log(JSON.stringify(cart));
 
@@ -446,7 +446,6 @@ $select_quantity.addEventListener('change', selected_quantity_change);
          swal('Success!', 'Product Save success.....', 'success');
 
      }
-
 
  }
 
