@@ -20,7 +20,7 @@ for (let item in cart) {
 }
 
 // data.payload.products.push(cart);
-// window.addEventListener("message", receiveMessage, false);
+window.addEventListener("message", DeleteItemCart, false);
 
 
 function receiveMessage(event) {
@@ -30,5 +30,16 @@ function receiveMessage(event) {
     if (messageType === "loadingEvent" && payload.name === "headlessAppLoaded") {
         let frame = document.getElementById("jane-menu");
         frame.contentWindow.postMessage(data, "*");
+    }
+}
+
+function DeleteItemCart (event) {
+    let payload = event.data && event.data.payload;
+    let messageType = event.data && event.data.messageType;
+
+    if (messageType === "analyticsEvent" && payload.name === "cartItemRemoval") {
+        console.log('removing from cart item');
+        console.table(payload);
+        //ejecutar funcion que eliminara el producto del localstorage
     }
 }
