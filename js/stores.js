@@ -4,7 +4,8 @@ let storage_local = window.localStorage;
 
 const search = instantsearch({
     indexName: 'menu-products-production',
-    searchClient
+    searchClient,
+    insightsClient:window.aa
 });
 
 search.use(instantsearch.middlewares.createInsightsMiddleware({
