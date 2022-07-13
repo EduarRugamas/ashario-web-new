@@ -355,7 +355,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
     let storage_local = window.localStorage;
     let count = 0;
-    let cart = {};
+    let cart = [];
 
 
     if (storage_local.getItem('count')) {
