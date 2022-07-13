@@ -50,5 +50,8 @@ function removeItemLocalStorage (cart, productId) {
     //local_storage.removeItem(productId);
     console.log(cart);
     console.log(productId);
-    console.log(data);
+
+    for (let item in cart) {
+        console.log('elemetos en el carrito para eliminar', cart[item]);
+    }
 }
