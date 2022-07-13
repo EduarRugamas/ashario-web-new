@@ -401,7 +401,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
                 count: selected_option_quantity
             };
             console.log('DATA JSON TO SAVE --> ', data_product_1);
-            cart[product_id] = data_product_1;
+            cart.push(data_product_1)
         }
 
         count++;
@@ -410,7 +410,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
         storage_local.setItem('cart', JSON.stringify(cart));
 
-        console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
+        console.log(`Se guardo en el local_storage key --> ${cart}`);
 
         updateCart();
 
@@ -428,7 +428,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
                  count: selected_option_quantity
              };
              console.log('DATA JSON TO SAVE --> ', data_product_2);
-             cart[product_id] = data_product_2;
+             cart.push(data_product_2);
          }
 
          count++;
@@ -437,7 +437,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
          storage_local.setItem('cart', JSON.stringify(cart));
 
-         console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
+         console.log(`Se guardo en el local_storage key --> ${cart}`);
 
          console.log(JSON.stringify(cart));
 
