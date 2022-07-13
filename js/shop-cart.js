@@ -49,5 +49,6 @@ function DeleteItemCart (event) {
 function removeItemLocalStorage (cart, productId) {
     //local_storage.removeItem(productId);
     console.log(cart);
-    console.log(productId)
+    console.log(productId);
+    console.log(data);
 }
