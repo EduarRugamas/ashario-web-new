@@ -53,7 +53,7 @@ function removeItemLocalStorage (cart, productId) {
     console.log(cart);
     console.log(productId);
     console.log('Producto seleccionado a eliminar', cart[productId]);
-    for (let item in cart) {
+    for (let [key, value] in Object.entries(cart[productId])) {
         cart_array.push(cart);
     }
     console.log(cart_array);
