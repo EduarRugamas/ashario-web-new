@@ -2,6 +2,7 @@ import {data} from '../config/data.js';
 
 let local_storage = window.localStorage;
 let cart = {};
+const cart_array = [];
 
 if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
@@ -14,8 +15,9 @@ if (data.payload.products.length === 0) {
 }
 
 for (let item in cart) {
-    console.log('elemeto en el carrito', cart[item]);
+    console.log('productos a agregar al carrito Jane', cart[item]);
     data.payload.products.push(cart[item]);
+    console.log('Elementos agregados al carrito', data.payload.products);
     window.addEventListener("message", receiveMessage, false);
 
 }
@@ -50,7 +52,9 @@ function removeItemLocalStorage (cart, productId) {
     //local_storage.removeItem(productId);
     console.log(cart);
     console.log(productId);
-
-    console.log('elemento en el carrito',cart[productId]);
-    cart.findIndex('productId');
+    console.log('elemento en el carrito', cart[productId]);
+    for (let item in cart) {
+        cart_array.push(cart);
+    }
+    console.log(cart_array);
 }
