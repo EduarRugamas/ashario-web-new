@@ -42,11 +42,11 @@ function DeleteItemCart (event) {
         console.log('removing from cart item');
         console.table(payload);
         //ejecutar funcion que eliminara el producto del localstorage
-        removeItemLocalStorage(payload.properties.productId);
+        removeItemLocalStorage(cart, payload.properties.productId);
     }
 }
 
-function removeItemLocalStorage (productId) {
-    local_storage.removeItem(productId);
+function removeItemLocalStorage (cart, productId) {
+    //local_storage.removeItem(productId);
     console.log(cart);
 }
