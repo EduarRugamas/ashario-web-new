@@ -52,5 +52,5 @@ function removeItemLocalStorage (cart, productId) {
     console.log(productId);
 
     console.log('elemento en el carrito',cart[productId]);
-
+    cart.indexOf('productId');
 }
