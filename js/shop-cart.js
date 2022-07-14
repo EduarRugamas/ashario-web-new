@@ -22,8 +22,11 @@ for (let item in cart) {
 
 }
 
-// data.payload.products.push(cart);
+// event of delete item of the cart
 window.addEventListener("message", DeleteItemCart, false);
+
+//event of update item of the cart
+window.addEventListener("message", UpdateItemCart, false)
 
 
 function receiveMessage(event) {
@@ -44,16 +47,40 @@ function DeleteItemCart (event) {
         console.log('removing from cart item');
         console.table(payload);
         //ejecutar funcion que eliminara el producto del localstorage
-        removeItemLocalStorage(cart, payload.properties.productId);
+        removeItemCart(cart, payload.properties.productId);
     }
 }
 
-function removeItemLocalStorage (cart, productId) {
+function UpdateItemCart (event) {
+    let payload = event.data && event.data.payload;
+    let messageType = event.data && event.data.messageType;
+
+    if (messageType === "analyticsEvent" && payload.name === "cartItemChangeCount") {
+        console.log('Updating cart item');
+        console.table(payload);
+        //ejecutar funcion que eliminara el producto del localstorage
+        updatingItemCart(cart, payload.properties.productId, payload.properties.count);
+    }
+}
+
+
+function removeItemCart (cart, productId) {
     //local_storage.removeItem(productId);
     console.log(cart);
     console.log(productId);
     console.log('Producto seleccionado a eliminar', cart[productId]);
-    delete cart[productId]
+    delete cart[productId];
     console.log(cart);
     local_storage.setItem('cart', JSON.stringify(cart));
 }
+
+function updatingItemCart (cart, productId, count) {
+    //local_storage.removeItem(productId);
+    // console.log(cart);
+    // console.log(productId);
+    // console.log('Producto seleccionado a eliminar', cart[productId]);
+    // delete cart[productId];
+    // console.log(cart);
+    // local_storage.setItem('cart', JSON.stringify(cart));
+}
+
