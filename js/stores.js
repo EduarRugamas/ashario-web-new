@@ -7,7 +7,10 @@ if (storage_local.getItem('count')){
     count = parseInt( storage_local.getItem('count') );
 }
 
-itemsViewCart()
+window.onload = function () {
+    itemsViewCart()
+}
+
 
 const search = instantsearch({
     indexName: 'menu-products-production',
