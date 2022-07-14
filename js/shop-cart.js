@@ -13,7 +13,7 @@ if (local_storage.getItem('count')){
     count = count = parseInt(local_storage.getItem('count'));
 }
 
-console.log(cart);
+updateCartCount();
 
 if (data.payload.products.length === 0) {
     window.addEventListener("message", receiveMessage, false);
@@ -31,7 +31,7 @@ for (let item in cart) {
 window.addEventListener("message", DeleteItemCart, false);
 
 //event of update item of the cart
-window.addEventListener("message", UpdateItemCart, false)
+window.addEventListener("message", UpdateItemCart, false);
 
 
 function receiveMessage(event) {
@@ -42,6 +42,8 @@ function receiveMessage(event) {
         let frame = document.getElementById("jane-menu");
         frame.contentWindow.postMessage(data, "*");
     }
+
+    updateCartCount()
 }
 
 function DeleteItemCart (event) {
