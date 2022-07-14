@@ -177,8 +177,7 @@ let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
 function itemsViewCart() {
-    let view_items_count = document.getElementById('quantity_items');
-    view_items_count.textContent = `${count} ITEMS`;
+    document.getElementById('quantity_items').textContent = `${count} ITEMS`;
     storage_local.setItem('count', count);
 }
 
