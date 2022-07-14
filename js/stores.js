@@ -7,11 +7,6 @@ if (storage_local.getItem('count')){
     count = parseInt( storage_local.getItem('count') );
 }
 
-window.onload = function () {
-    itemsViewCart()
-}
-
-
 const search = instantsearch({
     indexName: 'menu-products-production',
     searchClient,
@@ -178,6 +173,9 @@ search.start();
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
+
+itemsViewCart();
+
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
