@@ -172,14 +172,6 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
-window.onload = function () {
-    let btn = document.querySelectorAll('#add_to_cart_btn');
-
-    btn.addEventListener('click',  () =>  {
-        console.log('se clickeo el btn add to cart');
-    });
-
-}
 
 
 
