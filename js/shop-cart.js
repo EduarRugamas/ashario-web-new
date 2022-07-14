@@ -2,7 +2,7 @@ import {data} from '../config/data.js';
 
 let local_storage = window.localStorage;
 let cart = {};
-const cart_array = [];
+
 
 if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
@@ -77,9 +77,9 @@ function removeItemCart (cart, productId) {
 function updatingItemCart (cart, productId, count) {
     console.log(cart);
     console.log('id de el producto',productId);
-    console.log('Producto seleccionado a eliminar', cart[productId]);
+    console.log('Producto seleccionado a actualizar', cart[productId]);
     cart[productId].count = count;
     console.log(cart);
-    // local_storage.setItem('cart', JSON.stringify(cart));
+    local_storage.setItem('cart', JSON.stringify(cart));
 }
 
