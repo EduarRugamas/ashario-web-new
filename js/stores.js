@@ -35,7 +35,10 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 <p class="product-catergory font-13 mb-1 itemsubtype">${item.brand_subtype}</p>
                             </a>
                             <a href="product-details.html?objectID=${item.objectID}">
-                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
+                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({
+            attribute: 'name',
+            hit: item
+        })}</h6>
                             </a>
                             <div class="d-flex align-items-center">
                                 <div class="mb-1 product-price itemprice jcitemprice">
@@ -47,7 +50,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" onclick="added()"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" onload="added()"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
@@ -59,23 +62,10 @@ const HitsRender = (renderOptions, isFirstRender) => {
     ).join('')}
     `;
 
-    window.onload = function () {
-        let btn = document.querySelectorAll('#add_to_cart_btn');
 
-        btn.addEventListener('click', function () {
-            console.log('se clickeo el btn add to cart');
-        });
-
-        function added() {
-            console.log('se clickeo')
-        }
-    }
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
-function added() {
-    console.log('se clickeo');
-}
 
 //   fin de widgets custom o personalizados
 
@@ -182,13 +172,17 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
-// window.onload = function () {
-//     console.log('se ejecuto despues de cargar los hits');
-//
-//
-//
-// }
+window.onload = function () {
+    let btn = document.querySelectorAll('#add_to_cart_btn');
 
+    btn.addEventListener('click', function () {
+        console.log('se clickeo el btn add to cart');
+    });
+
+    function added() {
+        console.log('se clickeo');
+    }
+}
 
 
 
