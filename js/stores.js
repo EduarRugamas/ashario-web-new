@@ -178,6 +178,7 @@ frame.style = 'display: none;';
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
+    document.getElementById('count_quantity_cart').textContent = count;
     storage_local.setItem('count', count);
 }
 
