@@ -47,7 +47,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" onclick="added()"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
@@ -65,6 +65,10 @@ const HitsRender = (renderOptions, isFirstRender) => {
         btn.addEventListener('click', function () {
             console.log('se clickeo el btn add to cart');
         });
+
+        function added() {
+            console.log('se clickeo')
+        }
     }
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
