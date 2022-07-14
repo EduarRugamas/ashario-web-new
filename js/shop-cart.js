@@ -1,4 +1,4 @@
-import {data} from '../config/data.js';
+import { data } from '../config/data.js';
 
 let local_storage = window.localStorage;
 let cart = {};
