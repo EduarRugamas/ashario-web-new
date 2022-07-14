@@ -175,13 +175,10 @@ frame.style = 'display: none;';
 window.onload = function () {
     let btn = document.querySelectorAll('#add_to_cart_btn');
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click',  () =>  {
         console.log('se clickeo el btn add to cart');
     });
 
-    function added() {
-        console.log('se clickeo');
-    }
 }
 
 
