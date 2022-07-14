@@ -170,6 +170,11 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('se ejecuta despues de cargar los hits');
+
+});
+
 
 
 
