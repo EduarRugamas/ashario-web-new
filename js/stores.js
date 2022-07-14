@@ -2,6 +2,11 @@ import {searchClient} from '../config/config.js';
 
 let storage_local = window.localStorage;
 let count = 0;
+let cart = {};
+
+if (storage_local.getItem('cart')) {
+    cart = JSON.parse(storage_local.getItem('cart'));
+}
 
 if (storage_local.getItem('count')){
     count = parseInt( storage_local.getItem('count') );
@@ -176,24 +181,25 @@ frame.style = 'display: none;';
 
 itemsViewCart();
 
+console.log(cart);
+
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
     document.getElementById('count_quantity_cart').textContent = count;
-    storage_local.setItem('count', count);
 }
 
 
 
-window.onload = function () {
-    let bton = document.querySelectorAll('#add_to_cart_btn');
-
-    bton.forEach( btn => {
-         btn.addEventListener('click', function (){
-            console.log('se clickeo el btn add to cart');
-         });
-    })
-}
+// window.onload = function () {
+//     let bton = document.querySelectorAll('#add_to_cart_btn');
+//
+//     bton.forEach( btn => {
+//          btn.addEventListener('click', function (){
+//             console.log('se clickeo el btn add to cart');
+//          });
+//     })
+// };
 
 
 
