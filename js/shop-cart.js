@@ -75,12 +75,11 @@ function removeItemCart (cart, productId) {
 }
 
 function updatingItemCart (cart, productId, count) {
-    //local_storage.removeItem(productId);
-    // console.log(cart);
-    // console.log(productId);
-    // console.log('Producto seleccionado a eliminar', cart[productId]);
-    // delete cart[productId];
-    // console.log(cart);
+    console.log(cart);
+    console.log('id de el producto',productId);
+    console.log('Producto seleccionado a eliminar', cart[productId]);
+    cart[productId].count = count;
+    console.log(cart);
     // local_storage.setItem('cart', JSON.stringify(cart));
 }
 
