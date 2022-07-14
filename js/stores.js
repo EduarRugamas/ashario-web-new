@@ -47,7 +47,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <button onclick="" class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</button>
+                                    <button class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</button>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
@@ -169,7 +169,15 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
+window.onload = function () {
+    let bton = document.querySelectorAll('#add_to_cart_btn');
 
+    bton.forEach( btn => {
+         btn.addEventListener('click', function (){
+            console.log('se clickeo el btn add to cart');
+         });
+    })
+}
 
 
 

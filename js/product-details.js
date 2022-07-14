@@ -491,22 +491,3 @@ if (images.length === 0) {
 
 
 
-
-
-function add_to_cart(product_id, select_option_quantity, select_option_weight) {
-    //id de quantity items cart add #count_quantity_cart
-    let storage_local = window.localStorage;
-    let count = 0;
-    let cart = {};
-
-    if (storage_local.getItem('count')) {
-        count = parseInt(storage_local.getItem('count'));
-    }
-
-
-    if (storage_local.getItem('cart')){
-        cart = JSON.parse(storage_local.getItem('cart'));
-    }
-
-
-}
