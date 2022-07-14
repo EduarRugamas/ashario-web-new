@@ -73,6 +73,10 @@ const HitsRender = (renderOptions, isFirstRender) => {
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
+function added() {
+    console.log('se clickeo');
+}
+
 //   fin de widgets custom o personalizados
 
 
