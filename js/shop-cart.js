@@ -2,10 +2,15 @@ import {data} from '../config/data.js';
 
 let local_storage = window.localStorage;
 let cart = {};
+let count = 0;
 
 
 if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
+}
+
+if (local_storage.getItem('count')){
+    count = count = parseInt(local_storage.getItem('count'));
 }
 
 console.log(cart);
@@ -72,6 +77,8 @@ function removeItemCart (cart, productId) {
     delete cart[productId];
     console.log(cart);
     local_storage.setItem('cart', JSON.stringify(cart));
+    count--;
+    updateCartCount();
 }
 
 function updatingItemCart (cart, productId, count) {
@@ -81,5 +88,10 @@ function updatingItemCart (cart, productId, count) {
     cart[productId].count = count;
     console.log(cart);
     local_storage.setItem('cart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+    document.getElementById('count_quantity_cart').textContent = count;
+    local_storage.setItem('count', count);
 }
 
