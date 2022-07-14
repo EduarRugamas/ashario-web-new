@@ -183,6 +183,13 @@ itemsViewCart();
 
 console.log(cart);
 
+let list_items_mini_cart = document.getElementById('container_items_mini_cart');
+
+for (let item in cart){
+    console.log('productos en el carrito', item);
+}
+
+
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
@@ -200,6 +207,23 @@ function itemsViewCart() {
 //          });
 //     })
 // };
+
+
+// <div className="dropdown-item">
+//     <div className="d-flex align-items-center">
+//         <div className="flex-grow-1">
+//             <h6 className="cart-product-title">Men White T-Shirt</h6>
+//             <p className="cart-product-price">1 X $29.00</p>
+//         </div>
+//         <div className="position-relative">
+//             <div className="cart-product-cancel position-absolute"><i className='bx bx-x'></i>
+//             </div>
+//             <div className="cart-product">
+//                 <img src="assets/images/products/01.png" className="" alt="product image">
+//             </div>
+//         </div>
+//     </div>
+// </div>
 
 
 
