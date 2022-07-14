@@ -1,6 +1,13 @@
 import {searchClient} from '../config/config.js';
 
 let storage_local = window.localStorage;
+let count = 0;
+
+if (storage_local.getItem('count')){
+    count = parseInt( storage_local.getItem('count') );
+}
+
+itemsViewCart()
 
 const search = instantsearch({
     indexName: 'menu-products-production',
@@ -168,6 +175,14 @@ search.start();
 
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
+
+function itemsViewCart() {
+    let view_items_count = document.getElementById('quantity_items');
+    view_items_count.textContent = `${count} ITEMS`;
+    storage_local.setItem('count', count);
+}
+
+
 
 window.onload = function () {
     let bton = document.querySelectorAll('#add_to_cart_btn');

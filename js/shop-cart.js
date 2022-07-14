@@ -10,7 +10,7 @@ if (local_storage.getItem('cart')) {
 }
 
 if (local_storage.getItem('count')){
-    count = count = parseInt(local_storage.getItem('count'));
+    count = parseInt(local_storage.getItem('count'));
 }
 
 updateCartCount();
