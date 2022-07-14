@@ -166,14 +166,9 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
-window.addEventListener('DOMContentLoaded', () => {
-    console.log('se ejecuta despues de cargar los hits');
-
-    let btn = document.getElementById('add_to_cart_btn');
-    btn.addEventListener('click', ()=> {
-        console.log('se clickeo el btn add to cart')
-    })
-});
+function add_to_cart() {
+    console.log('se ejecuto despues de cargar los hits');
+}
 
 
 
