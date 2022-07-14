@@ -35,10 +35,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                                 <p class="product-catergory font-13 mb-1 itemsubtype">${item.brand_subtype}</p>
                             </a>
                             <a href="product-details.html?objectID=${item.objectID}">
-                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({
-            attribute: 'name',
-            hit: item
-        })}</h6>
+                                <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
                             </a>
                             <div class="d-flex align-items-center">
                                 <div class="mb-1 product-price itemprice jcitemprice">
@@ -50,7 +47,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <a href="${ function () { console.log('se clickeo') } }" class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</a>
+                                    <button onclick="${ function () { console.log('se clickeo'); } }" class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</button>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
