@@ -58,6 +58,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
         `
     ).join('')}
     `;
+
+    window.onload = function () {
+        let btn = document.getElementById('add_to_cart_btn');
+
+        btn.addEventListener('click', function () {
+            console.log('se clickeo el btn add to cart');
+        });
+    }
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
 
@@ -166,16 +174,12 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
-window.onload = function () {
-    console.log('se ejecuto despues de cargar los hits');
-
-    let btn = document.getElementById('add_to_cart_btn');
-
-    btn.addEventListener('click', function () {
-        console.log('se clickeo el btn add to cart');
-    });
-
-}
+// window.onload = function () {
+//     console.log('se ejecuto despues de cargar los hits');
+//
+//
+//
+// }
 
 
 
