@@ -168,6 +168,13 @@ frame.style = 'display: none;';
 
 window.onload = function () {
     console.log('se ejecuto despues de cargar los hits');
+
+    let btn = document.getElementById('add_to_cart_btn');
+
+    btn.addEventListener('click', function () {
+        console.log('se clickeo el btn add to cart');
+    });
+
 }
 
 
