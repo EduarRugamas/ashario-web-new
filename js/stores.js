@@ -60,7 +60,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
     `;
 
     window.onload = function () {
-        let btn = document.getElementById('add_to_cart_btn');
+        let btn = document.querySelectorAll('#add_to_cart_btn');
 
         btn.addEventListener('click', function () {
             console.log('se clickeo el btn add to cart');
