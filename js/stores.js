@@ -166,7 +166,7 @@ search.start();
 let frame = document.getElementById('jane-menu');
 frame.style = 'display: none;';
 
-function add_to_cart() {
+window.onload = function () {
     console.log('se ejecuto despues de cargar los hits');
 }
 
