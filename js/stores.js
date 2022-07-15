@@ -187,16 +187,11 @@ let list_items_mini_cart = document.getElementById('container_items_mini_cart');
 let counter = 0;
 let array = [];
 
-// for (let item in cart) {
-//     console.log('productos en el carrito', cart[item].productId);
-//     searchProduct(cart[item].productId, 4434);
-//
-//     console.log('result',searchProduct(cart[item].productId, 4434));
-// }
+for (let item in cart) {
+    console.log('productos en el carrito', JSON.stringify(cart[item].productId));
+    searchProduct(cart[item].productId, 4434);
+}
 
-cart.forEach( item => {
-    console.log(item);
-})
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
