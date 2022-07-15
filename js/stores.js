@@ -206,7 +206,24 @@ function searchProduct(product_id, store_id) {
     index.search( '', {
         filters: `product_id:${product_id} AND store_id:${store_id}`
     }).then( ({hits}) => {
-        return hits;
+        list_items_mini_cart.innerHTML=`
+        <div className="dropdown-item">
+            <div className="d-flex align-items-center">
+                <div className="flex-grow-1">
+<!--                    <h6 className="cart-product-title">Men White T-Shirt</h6>-->
+<!--                    <p className="cart-product-price">1 X $29.00</p>-->
+                    <h6 className="cart-product-title">${hits[0].name}</h6>
+                    <p className="cart-product-price">1 X $29.00</p>
+                </div>
+                <div className="position-relative">
+                    <div className="cart-product-cancel position-absolute"><i className='bx bx-x'></i></div>
+                    <div className="cart-product">
+                        <img src="${hits[0].images_url[0]}" className="" alt="product image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
     }).catch( (error) => {
         console.log('hay un error en la busqueda', error);
     });
