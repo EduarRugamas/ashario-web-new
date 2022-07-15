@@ -202,7 +202,7 @@ for (let item in cart){
                         <div class="flex-grow-1">
                             <!--<h6 class="cart-product-title">Men White T-Shirt</h6>-->
                             <!--<p class="cart-product-price">1 X $29.00</p>-->
-                            <h6 class="cart-product-title">${hits[0].name}</h6>
+                            <h6 class="cart-product-title">${item.name}</h6>
                             <p class="cart-product-price">1 X $29.00</p>
                         </div>
                             <div class="position-relative">
@@ -210,7 +210,7 @@ for (let item in cart){
                                 <i class='bx bx-x'></i>
                             </div>
                             <div class="cart-product">
-                                <img src="${hits[0].images_url[0]}" class="" alt="product image">
+                                <img src="${item.images_url[0]}" class="" alt="product image">
                             </div>
                         </div>
                     </div>
