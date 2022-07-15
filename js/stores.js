@@ -191,7 +191,7 @@ let list_items_mini_cart = document.getElementById('container_items_mini_cart');
 for (let item in cart){
     console.log('productos en el carrito', cart[item].productId);
     index.search('', {
-        filters: `product_id:${cart[item].productId}`
+        filters: `productId:${cart[item].productId}`
     }).then( ({item}) => {
         console.log('item', item);
     }).catch( (error) => {
