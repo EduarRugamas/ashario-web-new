@@ -189,9 +189,9 @@ let array = [];
 
 for (let item in cart){
     console.log('productos en el carrito', cart[item].productId);
-    let result = searchProduct(cart[item].productId, 4434);
+    searchProduct(cart[item].productId, 4434);
 
-    console.log('result',result);
+    console.log('result',searchProduct(cart[item].productId, 4434));
 }
 
 
