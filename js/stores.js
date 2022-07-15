@@ -212,7 +212,7 @@ for (let item in cart){
                                 <i class='bx bx-x'></i>
                             </div>
                             <div class="cart-product">
-                                <img src="${hits.images_url[0]}" class="" alt="product image">
+                                <img src="${hits.images_url}" class="" alt="product image">
                             </div>
                         </div>
                     </div>
