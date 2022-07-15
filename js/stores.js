@@ -188,6 +188,7 @@ console.log(cart);
 
 let list_items_mini_cart = document.getElementById('container_items_mini_cart');
 let counter = 0;
+let array = []
 for (let item in cart){
     console.log('productos en el carrito', cart[item].productId);
     index.search('', {
@@ -208,7 +209,9 @@ function itemsViewCart() {
 }
 
 function viewItemsMiniCart(items) {
-    console.log('arreglos', items)
+    console.log('arreglos', items);
+    array.push(items);
+    console.log(items);
 }
 
 
