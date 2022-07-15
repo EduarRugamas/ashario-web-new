@@ -17,6 +17,9 @@ const search = instantsearch({
     searchClient,
 });
 
+const indexName = 'menu-products-production';
+const index = searchClient.initIndex(indexName);
+
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
@@ -187,6 +190,13 @@ let list_items_mini_cart = document.getElementById('container_items_mini_cart');
 
 for (let item in cart){
     console.log('productos en el carrito', cart[item]);
+    index.search('', {
+        filters: `product_id:${cart[item].productId}`
+    }).then( ({item}) => {
+        console.log('item', item);
+    }).catch( (error) => {
+        console.log('hay un error en la busqueda', error);
+    });
 }
 
 

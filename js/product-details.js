@@ -1,5 +1,4 @@
 import {searchClient} from '../config/config.js';
-import { data } from '../config/data.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 
