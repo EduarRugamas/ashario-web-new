@@ -192,8 +192,8 @@ for (let item in cart){
     console.log('productos en el carrito', cart[item].productId);
     index.search('', {
         filters: `productId:${cart[item].productId}`
-    }).then( ({item}) => {
-        console.log('item', item);
+    }).then( ({hits}) => {
+        console.log('item', hits);
     }).catch( (error) => {
         console.log('hay un error en la busqueda', error);
     });
