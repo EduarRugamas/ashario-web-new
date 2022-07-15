@@ -195,28 +195,30 @@ for (let item in cart){
     }).then( ({hits}) => {
         console.log('item', hits);
 
-        hits.forEach( item => {
-            list_items_mini_cart.innerHTML=`
-                <div class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-grow-1">
-                            <!--<h6 class="cart-product-title">Men White T-Shirt</h6>-->
-                            <!--<p class="cart-product-price">1 X $29.00</p>-->
-                            <h6 class="cart-product-title">${item.name}</h6>
-                            <p class="cart-product-price">1 X $29.00</p>
-                        </div>
-                            <div class="position-relative">
-                            <div class="cart-product-cancel position-absolute">
-                                <i class='bx bx-x'></i>
-                            </div>
-                            <div class="cart-product">
-                                <img src="${item.images_url[0]}" class="" alt="product image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        `;
-        })
+        console.log(hits.length);
+
+        // hits.forEach( item => {
+        //     list_items_mini_cart.innerHTML=`
+        //         <div class="dropdown-item">
+        //             <div class="d-flex align-items-center">
+        //                 <div class="flex-grow-1">
+        //                     <!--<h6 class="cart-product-title">Men White T-Shirt</h6>-->
+        //                     <!--<p class="cart-product-price">1 X $29.00</p>-->
+        //                     <h6 class="cart-product-title">${item.name}</h6>
+        //                     <p class="cart-product-price">1 X $29.00</p>
+        //                 </div>
+        //                     <div class="position-relative">
+        //                     <div class="cart-product-cancel position-absolute">
+        //                         <i class='bx bx-x'></i>
+        //                     </div>
+        //                     <div class="cart-product">
+        //                         <img src="${item.images_url[0]}" class="" alt="product image">
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        // `;
+        // })
 
 
 
