@@ -218,12 +218,6 @@ for (let item in cart){
                     </div>
                 </div>
         `;
-
-
-
-
-
-
     }).catch( (error) => {
         console.log('hay un error en la busqueda', error);
     });
