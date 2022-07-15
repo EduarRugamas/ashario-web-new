@@ -194,30 +194,7 @@ for (let item in cart){
         filters: `product_id:${cart[item].productId} AND store_id:4434`
     }).then( ({hits}) => {
         console.log('item', hits);
-
-        console.log(cart.length);
-
-            list_items_mini_cart.innerHTML=`
-                <div class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-grow-1">
-                            <!--<h6 class="cart-product-title">Men White T-Shirt</h6>-->
-                            <!--<p class="cart-product-price">1 X $29.00</p>-->
-                            <h6 class="cart-product-title">${hits[counter].name}</h6>
-                            <p class="cart-product-price">1 X $29.00</p>
-                        </div>
-                            <div class="position-relative">
-                            <div class="cart-product-cancel position-absolute">
-                                <i class='bx bx-x'></i>
-                            </div>
-                            <div class="cart-product">
-                                <img src="${hits[counter].image_urls[0]}" class="" alt="product image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        `;
-            counter++;
+        viewItemsMiniCart(hits);
     }).catch( (error) => {
         console.log('hay un error en la busqueda', error);
     });
@@ -228,6 +205,10 @@ for (let item in cart){
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
     document.getElementById('count_quantity_cart').textContent = count;
+}
+
+function viewItemsMiniCart(items) {
+    console.log('arreglos', items)
 }
 
 
