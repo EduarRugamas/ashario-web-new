@@ -195,8 +195,11 @@ for (let item in cart){
     }).then( ({hits}) => {
         console.log('item', hits);
 
-        console.log(hits.length);
+        console.log(cart.length);
 
+        for (let i = 0; i<=cart.length; i++){
+            console.log(i);
+        }
 
             list_items_mini_cart.innerHTML=`
                 <div class="dropdown-item">
