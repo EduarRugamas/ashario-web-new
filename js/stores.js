@@ -17,9 +17,6 @@ const search = instantsearch({
     searchClient,
 });
 
-const indexName = 'menu-products-production';
-const index = searchClient.initIndex(indexName);
-
 //  widgets custom o personalizados
 
 // widgets de hits o mostrar elementos en tarjetas
@@ -188,17 +185,13 @@ console.log(cart);
 
 let list_items_mini_cart = document.getElementById('container_items_mini_cart');
 let counter = 0;
-let array = []
+let array = [];
+
 for (let item in cart){
     console.log('productos en el carrito', cart[item].productId);
-    index.search('', {
-        filters: `product_id:${cart[item].productId} AND store_id:4434`
-    }).then( ({hits}) => {
-        console.log('item', hits);
-        viewItemsMiniCart(hits);
-    }).catch( (error) => {
-        console.log('hay un error en la busqueda', error);
-    });
+    let result = searchProduct(cart[item].productId, 4434);
+
+    console.log('result',result);
 }
 
 
@@ -208,10 +201,19 @@ function itemsViewCart() {
     document.getElementById('count_quantity_cart').textContent = count;
 }
 
-function viewItemsMiniCart(items) {
-    console.log('arreglos', items);
-    array.push(items);
-    console.log(items);
+
+function searchProduct(product_id, store_id) {
+    const indexName = 'menu-products-production';
+    const index = searchClient.initIndex(indexName);
+
+    index.search( '', {
+        filters: `product_id:${product_id} AND store_id:${store_id}`
+    }).then( ({hits}) => {
+        console.log('search product', hits);
+        return hits;
+    }).catch( (error) => {
+        console.log('hay un error en la busqueda', error);
+    });
 }
 
 
