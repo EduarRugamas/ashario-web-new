@@ -190,6 +190,8 @@ let array = [];
 for (let item in cart) {
     console.log('productos en el carrito', JSON.stringify(cart[item].productId));
     searchProduct(cart[item].productId, 4434);
+    array.push(JSON.stringify(searchProduct(cart[item].productId, 4434)));
+
 }
 
 
