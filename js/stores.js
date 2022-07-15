@@ -190,7 +190,6 @@ let array = [];
 for (let item in cart) {
     console.log('productos en el carrito', JSON.stringify(cart[item].productId));
     searchProduct(cart[item].productId, 4434);
-    console.log(array.push(JSON.stringify(searchProduct(cart[item].productId, 4434))));
 }
 
 
@@ -207,7 +206,6 @@ function searchProduct(product_id, store_id) {
     index.search( '', {
         filters: `product_id:${product_id} AND store_id:${store_id}`
     }).then( ({hits}) => {
-        console.log('search product', hits);
         return hits;
     }).catch( (error) => {
         console.log('hay un error en la busqueda', error);
