@@ -296,7 +296,7 @@ function selected_quantity_change() {
 
     let selec_option_quantity = parseInt(document.getElementById('quantity').value);
     let select_option_weight = document.getElementById('select-weight').value;
-    let h4_price_replace = document.getElementById('h4_price');
+    let h4_price_replace = document.getElementById('text_price');
     let price_each_int = parseFloat(hits[0].price_each);
     if (hits[0].available_weights.length === 0) {
         let price_each_string = (price_each_int * selec_option_quantity).toFixed(2);
