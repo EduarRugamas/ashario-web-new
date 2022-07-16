@@ -57,7 +57,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             </div>
                             <div class="product-action mt-2" id="content">
                                <div class="d-grid gap-2">
-                                    <button class="btn btn-dark btn-ecomm" id="add_to_cart_btn"><i class="bx bxs-cart-add"></i>add to cart</button>
+                                    <a class="btn btn-dark btn-ecomm" id="add_to_cart_btn" id_product="${item.objectID}"><i class="bx bxs-cart-add"></i>add to cart</a>
                                     <a href="/views/product-details.html?objectID=${item.objectID}" class="btn btn-light btn-ecomm">Product Details</a>
                                </div> 
                             </div> 
@@ -69,6 +69,31 @@ const HitsRender = (renderOptions, isFirstRender) => {
     ).join('')}
     `;
 
+    window.onload = function () {
+        let bton = document.querySelectorAll('#add_to_cart_btn');
+
+        bton.forEach( btn => {
+            btn.addEventListener('click', function () {
+                console.log("add to cart");
+                let id = btn.getAttribute('id_product');
+                let hit = hits.filter( hit => hit.objectID === id)[0];
+
+                console.log('aqui el id ',id);
+                console.log('aqui el hit',hit);
+                // if (id in cart) {
+                //     cart[id].count = cart[id].count + 1;
+                // }else {
+                //     let data_product_1 = {
+                //         productId: hit.,
+                //         priceId: 'each',
+                //         count: selected_option_quantity
+                //     };
+                //     console.log('DATA JSON TO SAVE --> ', data_product_1);
+                //     cart[id] = data_product_1;
+                // }
+            });
+        });
+    }
 
 };
 const CustomHits = instantsearch.connectors.connectHits(HitsRender);
@@ -181,17 +206,6 @@ frame.style = 'display: none;';
 
 itemsViewCart();
 
-console.log(cart);
-
-let list_items_mini_cart = document.getElementById('container_items_mini_cart');
-let counter = 0;
-let array = [];
-
-for (let item in cart) {
-    console.log('productos en el carrito', JSON.stringify(cart[item].productId));
-    searchProduct(cart[item].productId, 4434);
-}
-
 
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
@@ -210,9 +224,7 @@ function searchProduct(product_id, store_id) {
         <div className="dropdown-item">
             <div className="d-flex align-items-center">
                 <div className="flex-grow-1">
-<!--                    <h6 className="cart-product-title">Men White T-Shirt</h6>-->
-<!--                    <p className="cart-product-price">1 X $29.00</p>-->
-                    <h6 className="cart-product-title">${hits[0].name}</h6>
+                    <h6 className="cart-product-title">Men White T-Shirt</h6>
                     <p className="cart-product-price">1 X $29.00</p>
                 </div>
                 <div className="position-relative">
