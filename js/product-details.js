@@ -423,8 +423,8 @@ $select_quantity.addEventListener('change', selected_quantity_change);
              title: 'Added to cart!',
              text: `${hits[0].name}`,
              imageUrl: `${hits[0].image_urls[0]}`,
-             imageWidth: 400,
-             imageHeight: 400,
+             imageWidth: 200,
+             imageHeight: 200,
          });
 
      } else {
