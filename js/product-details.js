@@ -71,7 +71,7 @@ index.search('', {
                                             <p class="badge bg-success font-13" id="item_sub_type"></p> 
                                         </div>
                                         
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex">
                                             <div class="mb-1 product-price itemprice jcitemprice">
                                                 <span class="fs-5 currencyformat jcpriceformat">CAD</span>
                                                 <span class="fs-5 jcpricingnw" id="text_price"></span>
