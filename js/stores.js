@@ -266,7 +266,6 @@ search.addWidgets([
 
                 return `
                 <a href="${url}" style="${isRefined ? 'font-weight: bold' : ''}">
-                    <span>{{label}} ({{count}})</span>
                     <span>${ (label === 'each') ? 'each' : (label === 'gram') ? '1G' : (label === 'eighth ounce') ? '3.5G' : (label === 'quarter ounce') ? '7G' : (label === 'half ounce') ? '14G' : (label === 'ounce')? '28G' : (label === 'half gram')? '0.5G': label } (${count})</span>
                 </a>
                 `;
