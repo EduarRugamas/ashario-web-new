@@ -70,13 +70,15 @@ index.search('', {
                                             <p class="badge bg-success font-13 ">${hits[0].brand}</p>
                                             <p class="badge bg-success font-13" id="item_sub_type"></p> 
                                         </div>
-                                        <div class="mb-1 product-price itemprice jcitemprice">
-                                            <span class="fs-5 currencyformat jcpriceformat">CAD</span>
-                                            <span class="fs-5 jcpricingnw" id="text_price"></span>
-                                            <span class="er-each jceachformat"></span>
-                                        </div>
                                         
-<!--                                        <div class="d-flex align-items-center mt-0 gap-2" id="text_price"></div>-->
+                                        <div class="d-flex align-items-center">
+                                            <div class="mb-1 product-price itemprice jcitemprice">
+                                                <span class="fs-5 currencyformat jcpriceformat">CAD</span>
+                                                <span class="fs-5 jcpricingnw" id="text_price"></span>
+                                                <span class="er-each jceachformat"></span>
+                                            </div>
+                                        </div>
+                                        <!--<div class="d-flex align-items-center mt-0 gap-2" id="text_price"></div>-->
                                         <div class="mt-3">
                                             <h6>Details:</h6>
                                             <dl class="row mt-3" id="container-details-dl">
