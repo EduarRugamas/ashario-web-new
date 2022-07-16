@@ -424,7 +424,7 @@ $select_quantity.addEventListener('change', selected_quantity_change);
              text: `${hits[0].name}`,
              imageUrl: `${hits[0].image_urls[0]}`,
              imageWidth: 400,
-             imageHeight: 200,
+             imageHeight: 400,
          });
 
      } else {
