@@ -17,7 +17,7 @@ export const data = {
                 calloutBackground: '#000000',
         calloutTextColor: '#FFFFFF',
             },
-            redirectUrl: "https://harmonious-mooncake-eb8276.netlify.app/views/shop-grid-left-sidebar.html",
+            redirectUrl: '/thank-you',
             disableAuthFeatures: true,
             disableLoadingSpinner: false,
             disableWeightSelection: false,
