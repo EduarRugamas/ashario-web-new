@@ -42,7 +42,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
                         <div class="product-info">
                             <a href="product-details.html?objectID=${item.objectID}">
                                 <p class="product-catergory font-13 mb-1 itembrand">${item.brand}</p>
-                                <p class="product-catergory font-13 mb-1 itemsubtype" id="itemsubtype">${(item.brand_subtype) === null || undefined ?  document.getElementById('itemsubtype').className='d-none' :  item.brand_subtype }</p>
+                                <p class="product-catergory font-13 mb-1 itemsubtype" id="itemsubtype">${(item.brand_subtype) === null || undefined ? '' :  item.brand_subtype }</p>
                             </a>
                             <a href="product-details.html?objectID=${item.objectID}">
                                 <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
