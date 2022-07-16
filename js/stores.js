@@ -199,15 +199,17 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         storage_local.setItem('cart', JSON.stringify(cart));
 
-
-
                         itemsViewCart();
-
-
                     }
                     count++;
                     console.log(`Carrito --> ${cart}`);
-                    swal('Success!', 'Product Save success.....', 'success');
+                    Swal.fire({
+                        title: 'Added to cart!',
+                        text: `${hit.name}`,
+                        imageUrl: `${hit.image_urls[0]}`,
+                        imageWidth: 200,
+                        imageHeight: 200,
+                    });
                     itemsViewCart();
 
                 }
@@ -307,7 +309,6 @@ itemsViewCart();
 
 
 function itemsViewCart() {
-    document.getElementById('quantity_items').textContent = `${count} ITEMS`;
     document.getElementById('count_quantity_cart').textContent = count;
     storage_local.setItem('count', count);
 }
