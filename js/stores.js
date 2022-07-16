@@ -78,19 +78,137 @@ const HitsRender = (renderOptions, isFirstRender) => {
                 let id = btn.getAttribute('id_product');
                 let hit = hits.filter( hit => hit.objectID === id)[0];
 
-                console.log('aqui el id ',id);
+                console.log('aqui el object id', id);
                 console.log('aqui el hit',hit);
-                // if (id in cart) {
-                //     cart[id].count = cart[id].count + 1;
-                // }else {
-                //     let data_product_1 = {
-                //         productId: hit.,
-                //         priceId: 'each',
-                //         count: selected_option_quantity
-                //     };
-                //     console.log('DATA JSON TO SAVE --> ', data_product_1);
-                //     cart[id] = data_product_1;
-                // }
+                if (id in cart) {
+                    cart[hit.product_id].count = cart[hit.product_id].count + 1;
+                }else {
+
+                    if (hit.available_weights.length === 0 ){
+                        let data_product_each = {
+                            productId: hit.product_id,
+                            priceId: 'each',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_each);
+
+                        cart[hit.product_id] = data_product_each;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+
+                    }else if (hit.available_weights[0] === 'gram'){
+                        let data_product_gram = {
+                            productId: hit.product_id,
+                            priceId: 'gram',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_gram);
+
+                        cart[hit.product_id] = data_product_gram;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }else if (hit.available_weights[0] === 'eighth ounce') {
+                        let data_product_eighth_ounce = {
+                            productId: hit.product_id,
+                            priceId: 'eighth_ounce',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_eighth_ounce);
+
+                        cart[hit.product_id] = data_product_eighth_ounce;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }else if (hit.available_weights[0] === 'quarter ounce') {
+                        let data_product_quarter_ounce = {
+                            productId: hit.product_id,
+                            priceId: 'quarter_ounce',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_quarter_ounce);
+
+                        cart[hit.product_id] = data_product_quarter_ounce;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }else if (hit.available_weights[0] === 'half ounce') {
+                        let data_product_half_ounce = {
+                            productId: hit.product_id,
+                            priceId: 'half_ounce',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_half_ounce);
+
+                        cart[hit.product_id] = data_product_half_ounce;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }else if (hit.available_weights[0] === 'ounce') {
+                        let data_product_ounce = {
+                            productId: hit.product_id,
+                            priceId: 'ounce',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_ounce);
+
+                        cart[hit.product_id] = data_product_ounce;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }else if (hit.available_weights[0] === 'half gram') {
+                        let data_product_half_gram = {
+                            productId: hit.product_id,
+                            priceId: 'half_gram',
+                            count: 1
+                        };
+                        console.log('DATA JSON TO SAVE --> ', data_product_half_gram);
+
+                        cart[hit.product_id] = data_product_half_gram;
+
+                        storage_local.setItem('cart', JSON.stringify(cart));
+
+                        count++;
+
+                        itemsViewCart();
+
+                        swal('Success!', 'Product Save success.....', 'success');
+                    }
+
+                    console.log(`Carrito --> ${cart}`);
+                    itemsViewCart();
+                }
             });
         });
     }
@@ -210,6 +328,7 @@ itemsViewCart();
 function itemsViewCart() {
     document.getElementById('quantity_items').textContent = `${count} ITEMS`;
     document.getElementById('count_quantity_cart').textContent = count;
+    storage_local.setItem('count', count);
 }
 
 
