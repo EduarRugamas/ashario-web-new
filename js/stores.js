@@ -98,9 +98,17 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         count++;
 
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
+
                         itemsViewCart();
 
-                        swal('Success!', 'Product Save success.....', 'success');
+
 
                     }else if (hit.available_weights[0] === 'gram'){
                         let data_product_gram = {
@@ -115,6 +123,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
                         storage_local.setItem('cart', JSON.stringify(cart));
 
                         count++;
+
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
 
                         itemsViewCart();
 
@@ -133,6 +149,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         count++;
 
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
+
                         itemsViewCart();
 
                         swal('Success!', 'Product Save success.....', 'success');
@@ -149,6 +173,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
                         storage_local.setItem('cart', JSON.stringify(cart));
 
                         count++;
+
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
 
                         itemsViewCart();
 
@@ -167,9 +199,16 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         count++;
 
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
+
                         itemsViewCart();
 
-                        swal('Success!', 'Product Save success.....', 'success');
                     }else if (hit.available_weights[0] === 'ounce') {
                         let data_product_ounce = {
                             productId: hit.product_id,
@@ -183,6 +222,14 @@ const HitsRender = (renderOptions, isFirstRender) => {
                         storage_local.setItem('cart', JSON.stringify(cart));
 
                         count++;
+
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
 
                         itemsViewCart();
 
@@ -199,17 +246,19 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         storage_local.setItem('cart', JSON.stringify(cart));
 
+                        count++;
+
+                        Swal.fire({
+                            title: 'Added to cart!',
+                            text: `${hit.name}`,
+                            imageUrl: `${hit.image_urls[0]}`,
+                            imageWidth: 200,
+                            imageHeight: 200,
+                        });
+
                         itemsViewCart();
                     }
-                    count++;
-                    console.log(`Carrito --> ${cart}`);
-                    Swal.fire({
-                        title: 'Added to cart!',
-                        text: `${hit.name}`,
-                        imageUrl: `${hit.image_urls[0]}`,
-                        imageWidth: 200,
-                        imageHeight: 200,
-                    });
+
                     itemsViewCart();
 
                 }
