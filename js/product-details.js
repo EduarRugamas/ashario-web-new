@@ -75,7 +75,7 @@ index.search('', {
                                             <div class="mb-1 product-price itemprice jcitemprice">
                                                 <span class="fs-5 currencyformat jcpriceformat">CAD</span>
                                                 <span class="fs-5 jcpricingnw" id="text_price"></span>
-                                                <span class="er-each jceachformat"></span>
+                                                <span class="er-each jceachformat" id="text_weights_format"></span>
                                             </div>
                                         </div>
                                         <!--<div class="d-flex align-items-center mt-0 gap-2" id="text_price"></div>-->
@@ -270,23 +270,30 @@ function selected_weight_change() {
     let option_select_quantity = document.getElementById('quantity');
     let current_option_weight = document.getElementById('select-weight').value;
     let h4_price_string = document.getElementById('text_price');
+    let text_weight_format = document.getElementById('text_weights_format');
     if (current_option_weight === 'gram') {
         h4_price_string.textContent = `$ ${hits[0].price_gram}`;
+        text_weight_format.textContent = '/1G';
         option_select_quantity.selectedIndex = 0;
     } else if (current_option_weight === 'eighth ounce') {
         h4_price_string.textContent = `$ ${hits[0].price_eighth_ounce}`;
+        text_weight_format.textContent = '/3.5G';
         option_select_quantity.selectedIndex = 0;
     } else if (current_option_weight === 'quarter ounce') {
         h4_price_string.textContent = `$ ${hits[0].price_quarter_ounce}`;
+        text_weight_format.textContent = '/7G';
         option_select_quantity.selectedIndex = 0;
     } else if (current_option_weight === 'half ounce') {
         h4_price_string.textContent = `$ ${hits[0].price_half_ounce}`;
+        text_weight_format.textContent = '/14G';
         option_select_quantity.selectedIndex = 0;
     } else if (current_option_weight === 'half gram') {
         h4_price_string.textContent = `$ ${hits[0].price_half_gram}`;
+        text_weight_format.textContent = '/0.5G';
         option_select_quantity.selectedIndex = 0;
     } else if (current_option_weight === 'ounce') {
         h4_price_string.textContent = `$ ${hits[0].price_ounce}`;
+        text_weight_format.textContent = '/28G';
         option_select_quantity.selectedIndex = 0;
     }
 
