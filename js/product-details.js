@@ -419,7 +419,13 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
         updateCart();
 
-        swal('Success!', 'Product Save success.....', 'success');
+         Swal.fire({
+             title: 'Added to cart!',
+             text: `${hits[0].name}`,
+             imageUrl: `${hits[0].image_urls[0]}`,
+             imageWidth: 400,
+             imageHeight: 200,
+         });
 
      } else {
 
@@ -448,7 +454,13 @@ $select_quantity.addEventListener('change', selected_quantity_change);
 
          updateCart();
 
-         swal('Success!', 'Product Save success.....', 'success');
+        Swal.fire({
+            title: 'Added to cart!',
+            text: `${hits[0].name}`,
+            imageUrl: `${hits[0].image_urls[0]}`,
+            imageWidth: 400,
+            imageHeight: 200,
+        });
 
      }
 

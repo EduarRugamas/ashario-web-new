@@ -199,15 +199,17 @@ const HitsRender = (renderOptions, isFirstRender) => {
 
                         storage_local.setItem('cart', JSON.stringify(cart));
 
-                        count++;
+
 
                         itemsViewCart();
 
-                        swal('Success!', 'Product Save success.....', 'success');
-                    }
 
+                    }
+                    count++;
                     console.log(`Carrito --> ${cart}`);
+                    swal('Success!', 'Product Save success.....', 'success');
                     itemsViewCart();
+
                 }
             });
         });
