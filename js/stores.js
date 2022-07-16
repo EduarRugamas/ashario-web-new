@@ -261,11 +261,17 @@ search.addWidgets([
         container: '#jcweight-list',
         attribute: 'available_weights',
         templates: {
-            item: `
-                      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
-                        <span>{{label}} ({{count}})</span>
-                      </a>
-                    `,
+            item(item) {
+                const {url, label, count, isRefined} = item;
+
+                return `
+                <a href="${url}" style="${isRefined ? 'font-weight: bold' : ''}">
+                    <span>{{label}} ({{count}})</span>
+                    <span>${ (label === 'each') ? 'each' : (label === 'gram') ? '1G' : (label === 'eighth ounce') ? '3.5G' : (label === 'quarter ounce') ? '7G' : (label === 'half ounce') ? '14G' : (label === 'ounce')? '28G' : (label === 'half gram')? '0.5G': label } (${count})</span>
+                </a>
+                `;
+
+            }
         },
     }),
 
@@ -283,32 +289,6 @@ search.addWidgets([
             resetLabel: 'All Weights',
         },
     }),
-
-
-//        instantsearch.widgets.numericMenu({
-//            container: '#container-price',
-    //           attribute: 'bucket_price',
-    //           items: [
-    //              {
-    //                   label: 'All'
-    //               },
-    //               {
-    //                   label: 'Under $20', end: 20
-    //               },
-    //               {
-    //                   label: '$20 - $40', start: 20, end: 40
-    //               },
-    //               {
-    //                   label: '$40 - $60', start: 40, end: 60
-    //              },
-    //               {
-    //                   label: '$60 - $80', start: 60, end: 80
-    //               },
-    //               {
-    //                   label: '$80 & above', start: 80
-    //               }
-    //           ]
-    //       }),
 
     CustomHits({container: document.querySelector('#container-hits')}),
 
@@ -360,7 +340,12 @@ function searchProduct(product_id, store_id) {
     });
 }
 
-
+// `
+//                       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+//                         <span>{{label}} ({{count}})</span>
+//                         <span>${}</span>
+//                       </a>
+//                     `
 
 // window.onload = function () {
 //     let bton = document.querySelectorAll('#add_to_cart_btn');
