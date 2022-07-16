@@ -68,7 +68,7 @@ index.search('', {
                                         <h3 class="mt-4 mt-lg-0 mb-0">${hits[0].name}</h3>
                                         <div class="d-inline-block mt-2" >
                                             <p class="badge bg-success font-13 ">${hits[0].brand}</p>
-                                            <p class="badge bg-success font-13 ">${hits[0].brand_subtype}</p>
+                                            <p class="badge bg-success font-13" id="item_sub_type"></p> 
                                         </div>
                                         <div class="d-flex align-items-center mt-0 gap-2" id="text_price"></div>
                                         <div class="mt-3">
@@ -202,6 +202,14 @@ if (hits[0].max_cart_quantity === 0 || hits[0].max_cart_quantity === null || hit
         options_quantity.text = quantity_select;
         container_select_quantity.appendChild(options_quantity);
     }
+}
+
+let brand_sub_type = document.getElementById('item_sub_type');
+
+if (hits[0].brand_subtype === null || undefined) {
+    brand_sub_type.className='d-none';
+}else {
+    brand_sub_type.textContent=`${hits[0].brand_subtype}`;
 }
 
 
