@@ -18,6 +18,10 @@ index.search('', {
        <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
             <div class="container">
                 <div class="page-breadcrumb d-flex align-items-center">
+                    <a href="../index.html" class="nav-link position-relative cart-link">
+                            <i class='bx bx-chevron-left bx-lg' style="color: #000000; "></i>
+                    </a>
+               
                     <h3 class="breadcrumb-title pe-3">${hits[0].name}</h3>
                     <div class="col-4 col-md-auto order-2 order-md-4 ms-auto">
                         <div class="top-cart-icons float-start">
