@@ -245,6 +245,7 @@ if (hits[0].available_weights.length === 0) {
 const $select_weight = document.querySelector('#select-weight');
 const $select_quantity = document.querySelector('#quantity');
 let container_price = document.getElementById('text_price');
+let text_weight_format = document.getElementById('text_weights_format');
 
 if (hits[0].available_weights.length === 0) {
     container_price.textContent = `$ ${hits[0].price_each}`;
@@ -253,16 +254,22 @@ if (hits[0].available_weights.length === 0) {
     console.log(option_weigh_current);
     if (option_weigh_current === 'gram') {
         container_price.textContent = `$ ${hits[0].price_gram}`;
+        text_weight_format.textContent = '/1G';
     } else if (option_weigh_current === 'eighth ounce') {
         container_price.textContent = `$ ${hits[0].price_eighth_ounce}`;
+        text_weight_format.textContent = '/3.5G';
     } else if (option_weigh_current === 'quarter ounce') {
         container_price.textContent = `$ ${hits[0].price_quarter_ounce}`;
+        text_weight_format.textContent = '/7G';
     } else if (option_weigh_current === 'half ounce') {
         container_price.textContent = `$ ${hits[0].price_half_ounce}`;
+        text_weight_format.textContent = '/14G';
     } else if (option_weigh_current === 'ounce') {
         container_price.textContent = `$ ${hits[0].price_ounce}`;
+        text_weight_format.textContent = '/28G';
     } else if (option_weigh_current === "half gram") {
         container_price.textContent = `$ ${hits[0].price_half_gram}`;
+        text_weight_format.textContent = '/0.5G';
     }
 }
 
