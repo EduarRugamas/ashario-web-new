@@ -198,3 +198,9 @@ background-color: #FFF !important;
 .product-details .jcitemprice{
     margin-left: 0px !important;
 }
+.jcbreadcrumb{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    background: #000 !important;
+    color: #FFF !important;
+}
