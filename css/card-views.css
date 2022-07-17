@@ -204,3 +204,7 @@ background-color: #FFF !important;
     background: #000 !important;
     color: #FFF !important;
 }
+.jcbreadcrumb .breadcrumb-title{
+    color: #FFF;
+
+}
