@@ -221,3 +221,8 @@ background-color: #FFF !important;
 .bx-chevron-left {
     color: #FFF !important;
 }
+.product-grid .card{
+    border: none !important;
+    box-shadow:  none !important;
+
+}
