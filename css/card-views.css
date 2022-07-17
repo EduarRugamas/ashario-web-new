@@ -226,3 +226,7 @@ background-color: #FFF !important;
     box-shadow:  none !important;
 
 }
+.card.product-card:hover{
+      border: none !important;
+    box-shadow:  none !important;  
+}
