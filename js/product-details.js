@@ -159,7 +159,7 @@ index.search('', {
         let dd_string = document.createElement('dd');
         dt_title.className = 'col-sm-3';
         dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'thc';
+        dt_title.textContent = 'tac';
         dd_string.className = 'col-sm-9';
         dd_string.textContent = `${hits[0].percent_tac}%`;
         container_details.appendChild(dt_title);
@@ -174,7 +174,7 @@ index.search('', {
         let dd_string = document.createElement('dd');
         dt_title.className = 'col-sm-3';
         dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'tac';
+        dt_title.textContent = 'thc';
         dd_string.className = 'col-sm-9';
         dd_string.textContent = `${hits[0].percent_thc}%`;
         container_details.appendChild(dt_title);
