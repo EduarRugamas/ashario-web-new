@@ -215,5 +215,9 @@ background-color: #FFF !important;
 .jcbreadcrumb .top-cart-icons .nav-link #count_quantity_cart{
     background: #FFF !important;
     color: #000 !important;
+    font-weight: 700 !important;
 
+}
+.bx-chevron-left {
+    color: #FFF !important;
 }
