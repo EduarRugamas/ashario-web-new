@@ -69,7 +69,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
     ).join('')}
     `;
 
-    window.onload = function () {
+    $('#container-hits').load = function () {
         let bton = document.querySelectorAll('#add_to_cart_btn');
 
         bton.forEach( btn => {
