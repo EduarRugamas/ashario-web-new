@@ -205,6 +205,15 @@ background-color: #FFF !important;
     color: #FFF !important;
 }
 .jcbreadcrumb .breadcrumb-title{
-    color: #FFF;
+    color: #FFF !important;
+
+}
+.jcbreadcrumb .breadcrumb-title .top-cart-icons .nav-link{
+    color: #FFF !important;
+
+}
+.jcbreadcrumb .breadcrumb-title .top-cart-icons .nav-link #count_quantity_cart{
+    background: #FFF !important;
+    color: #000 !important;
 
 }
