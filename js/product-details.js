@@ -15,7 +15,7 @@ index.search('', {
     const contenedor = document.getElementById('product-details');
 
     contenedor.innerHTML = `
-       <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
+       <section class="py-3 border-bottom border-top d-md-flex bg-light">
             <div class="container">
                 <div class="page-breadcrumb d-flex align-items-center">
                     <a href="../index.html" class="nav-link position-relative cart-link">
