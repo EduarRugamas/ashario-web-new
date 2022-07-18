@@ -92,7 +92,7 @@ index.search('', {
                                             <!--<p class="mb-0">${hits[0].description}</p>-->
                                         
                                             <h6>Description:</h6>
-                                             <p class="mb-0">${hits[0]._highlightResult.description.value}</p>
+                                             <p class="mb-0">${hits[0]._highlightResult.store_notes.value}</p>
                                         </div>
                                         <div class="row row-cols-auto align-items-center mt-3">
                                             <div class="col" id="container_quantity">
