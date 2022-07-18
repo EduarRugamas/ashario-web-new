@@ -43,7 +43,6 @@ const HitsRender = (renderOptions, isFirstRender) => {
                             <a href="product-details.html?objectID=${item.objectID}">
                                 <p class="product-catergory font-13 mb-1 itembrand">${item.brand}</p>
                                 <p class="product-catergory font-13 mb-1 itemsubtype" id="itemsubtype">${(item.brand_subtype) === null || undefined ? '' :  item.brand_subtype }</p>
-                                <div id="jctype"></div>
                             </a>
                             <a href="product-details.html?objectID=${item.objectID}">
                                 <h6 class="product-name mb-2 itemname">${instantsearch.highlight({attribute: 'name', hit: item})}</h6>
@@ -69,105 +68,6 @@ const HitsRender = (renderOptions, isFirstRender) => {
         `
     ).join('')}
     `;
-
-
-
-  let frame = document.getElementById('jane-menu');
-    frame.style= 'display: none;';
-
-if (hits[0].percent_cbd === 0 || hits[0].percent_cbd === null) {
-        console.log('no tiene cbd');
-    } else {
-        let container_details = document.getElementById('jctype');
-        let dt_title = document.createElement('dt');
-        let dd_string = document.createElement('dd');
-        dt_title.className = 'col-sm-3';
-        dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'cbd';
-        dd_string.className = 'col-sm-9';
-        dd_string.textContent = `${hits[0].percent_cbd}%`;
-        container_details.appendChild(dt_title);
-        container_details.appendChild(dd_string);
-    }
-
-    if (hits[0].percent_cbda === 0 || hits[0].percent_cbda === null) {
-        console.log('no tiene cbda');
-    } else {
-        let container_details = document.getElementById('jctype');
-        let dt_title = document.createElement('dt');
-        let dd_string = document.createElement('dd');
-        dt_title.className = 'col-sm-3';
-        dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'cbda';
-        dd_string.className = 'col-sm-9';
-        dd_string.textContent = `${hits[0].percent_cbda}%`;
-        container_details.appendChild(dt_title);
-        container_details.appendChild(dd_string);
-    }
-
-    if (hits[0].percent_tac === 0 || hits[0].percent_tac === null) {
-        console.log('no tiene tac');
-    } else {
-        let container_details = document.getElementById('jctype');
-        let dt_title = document.createElement('dt');
-        let dd_string = document.createElement('dd');
-        dt_title.className = 'col-sm-3';
-        dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'tac';
-        dd_string.className = 'col-sm-9';
-        dd_string.textContent = `${hits[0].percent_tac}%`;
-        container_details.appendChild(dt_title);
-        container_details.appendChild(dd_string);
-    }
-
-    if (hits[0].percent_thc === 0 || hits[0].percent_thc === null) {
-        console.log('no tiene percent_thc');
-    }else {
-        let container_details = document.getElementById('jctype');
-        let dt_title = document.createElement('dt');
-        let dd_string = document.createElement('dd');
-        dt_title.className = 'col-sm-3';
-        dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'thc';
-        dd_string.className = 'col-sm-9';
-        dd_string.textContent = `${hits[0].percent_thc}%`;
-        container_details.appendChild(dt_title);
-        container_details.appendChild(dd_string);
-    }
-
-
-    if (hits[0].percent_thca === 0 || hits[0].percent_thca === null){
-        console.log('no tiene percent_thca');
-    }else {
-        let container_details = document.getElementById('jctype');
-        let dt_title = document.createElement('dt');
-        let dd_string = document.createElement('dd');
-        dt_title.className = 'col-sm-3';
-        dt_title.style = 'text-transform: uppercase;';
-        dt_title.textContent = 'tac';
-        dd_string.className = 'col-sm-9';
-        dd_string.textContent = `${hits[0].percent_thca}%`;
-        container_details.appendChild(dt_title);
-        container_details.appendChild(dd_string);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     window.onload = function () {
         let bton = document.querySelectorAll('#add_to_cart_btn');
