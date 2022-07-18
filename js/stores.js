@@ -346,8 +346,8 @@ search.addWidgets([
         instantsearch.widgets.sortBy({
             container: '#container-price',
             items: [
-    { label: 'Price (asc)', value: 'bucket_price_asc' },
-    { label: 'Price (desc)', value: 'bucket_price_desc' },
+    { label: 'Price (asc)', value: 'bucket_price' },
+    { label: 'Price (desc)', value: 'bucket_price' },
   ],
         }),
 
