@@ -396,8 +396,15 @@ $select_quantity.addEventListener('change', selected_quantity_change);
         if (product_id in cart) {
 
             cart[product_id].count = selected_option_quantity;
+            storage_local.setItem('cart', JSON.stringify(cart));
             console.log(cart);
-
+            Swal.fire({
+                title: 'Update Product!',
+                text: `${hits[0].name}`,
+                imageUrl: `${hits[0].image_urls[0]}`,
+                imageWidth: 250,
+                imageHeight: 200,
+            });
         }else {
 
             let data_product_1 = {
@@ -429,6 +436,13 @@ $select_quantity.addEventListener('change', selected_quantity_change);
              cart[product_id].count = selected_option_quantity;
              console.log('el producto se modifico el quantity', cart);
              storage_local.setItem('cart', JSON.stringify(cart));
+             Swal.fire({
+                 title: 'Update Product!',
+                 text: `${hits[0].name}`,
+                 imageUrl: `${hits[0].image_urls[0]}`,
+                 imageWidth: 250,
+                 imageHeight: 200,
+             });
          }else {
              let data_product_2 = {
                  productId: product_id,
