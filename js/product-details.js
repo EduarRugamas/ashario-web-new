@@ -407,31 +407,28 @@ $select_quantity.addEventListener('change', selected_quantity_change);
             };
             console.log('DATA JSON TO SAVE --> ', data_product_1);
             cart[product_id] = data_product_1;
+            count++;
+            storage_local.setItem('cart', JSON.stringify(cart));
+            console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
+            updateCart();
+
+            Swal.fire({
+                title: 'Added to cart!',
+                text: `${hits[0].name}`,
+                imageUrl: `${hits[0].image_urls[0]}`,
+                imageWidth: 200,
+                imageHeight: 200,
+            });
         }
 
-        count++;
-
         console.log(cart);
-
-        storage_local.setItem('cart', JSON.stringify(cart));
-
-        console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
-
-        updateCart();
-
-         Swal.fire({
-             title: 'Added to cart!',
-             text: `${hits[0].name}`,
-             imageUrl: `${hits[0].image_urls[0]}`,
-             imageWidth: 200,
-             imageHeight: 200,
-         });
 
      } else {
 
          if (product_id in cart) {
              cart[product_id].count = selected_option_quantity;
              console.log('el producto se modifico el quantity', cart);
+             storage_local.setItem('cart', JSON.stringify(cart));
          }else {
              let data_product_2 = {
                  productId: product_id,
@@ -440,27 +437,22 @@ $select_quantity.addEventListener('change', selected_quantity_change);
              };
              console.log('DATA JSON TO SAVE --> ', data_product_2);
              cart[product_id] = data_product_2;
+             count++;
+             storage_local.setItem('cart', JSON.stringify(cart));
+             console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
+
+             updateCart();
+
+             Swal.fire({
+                 title: 'Added to cart!',
+                 text: `${hits[0].name}`,
+                 imageUrl: `${hits[0].image_urls[0]}`,
+                 imageWidth: 400,
+                 imageHeight: 200,
+             });
          }
 
-         count++;
-
          console.log(cart);
-
-         storage_local.setItem('cart', JSON.stringify(cart));
-
-         console.log(`Se guardo en el local_storage key --> ${cart[product_id]}`);
-
-         console.log(JSON.stringify(cart));
-
-         updateCart();
-
-        Swal.fire({
-            title: 'Added to cart!',
-            text: `${hits[0].name}`,
-            imageUrl: `${hits[0].image_urls[0]}`,
-            imageWidth: 400,
-            imageHeight: 200,
-        });
 
      }
 
