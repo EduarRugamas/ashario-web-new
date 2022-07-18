@@ -343,7 +343,7 @@ search.addWidgets([
     }),
 
 
-        instantsearch.widgets.numericMenu({
+        instantsearch.widgets.rangeSlider({
             container: '#container-price',
             attribute: 'bucket_price',
         }),
