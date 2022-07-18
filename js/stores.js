@@ -348,6 +348,14 @@ search.addWidgets([
             attribute: 'bucket_price',
         }),
 
+        instantsearch.widgets.rangeSlider({
+            container: '#container-thc',
+            attribute: 'percent_thc',
+        }),
+        instantsearch.widgets.rangeSlider({
+            container: '#container-cbd',
+            attribute: 'percent_cbd',
+        }),
 
 
     CustomHits({container: document.querySelector('#container-hits')}),
