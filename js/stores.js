@@ -69,7 +69,7 @@ const HitsRender = (renderOptions, isFirstRender) => {
     ).join('')}
     `;
 
-    container-hits.onload = function () {
+    window.onload = function () {
         let bton = document.querySelectorAll('#add_to_cart_btn');
 
         bton.forEach( btn => {
@@ -341,6 +341,34 @@ search.addWidgets([
             resetLabel: 'All Weights',
         },
     }),
+
+
+        instantsearch.widgets.numericMenu({
+            container: '#container-price',
+            attribute: 'bucket_price',
+            items: [
+                {
+                    label: 'All'
+                },
+                {
+                    label: 'Under $20', end: 20
+                },
+                {
+                    label: '$20 - $40', start: 20, end: 40
+                },
+                {
+                    label: '$40 - $60', start: 40, end: 60
+                },
+                {
+                    label: '$60 - $80', start: 60, end: 80
+                },
+                {
+                    label: '$80 & above', start: 80
+                }
+            ]
+        }),
+
+
 
     CustomHits({container: document.querySelector('#container-hits')}),
 
