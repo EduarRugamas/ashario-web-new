@@ -7,10 +7,12 @@ let count = 0;
 
 if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
+    window.localStorage.clear();
 }
 
 if (local_storage.getItem('count')){
     count = parseInt(local_storage.getItem('count'));
+    window.localStorage.clear();
 }
 
 updateCartCount();
