@@ -1,5 +1,5 @@
 import { data } from '../config/data.js';
-
+window.localStorage.clear();
 let local_storage = window.localStorage;
 let cart = {};
 let count = 0;
