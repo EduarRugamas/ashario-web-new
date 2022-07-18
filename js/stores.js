@@ -343,12 +343,9 @@ search.addWidgets([
     }),
 
 
-        instantsearch.widgets.sortBy({
+        instantsearch.widgets.rangeSlider({
             container: '#container-price',
-            items: [
-    { label: 'Price (asc)', value: 'bucket_price' },
-    { label: 'Price (desc)', value: 'bucket_price' },
-  ],
+            attribute: 'bucket_price',
         }),
 
 
