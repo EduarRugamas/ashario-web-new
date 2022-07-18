@@ -1,5 +1,5 @@
 import { data } from '../config/data.js';
-window.localStorage.clear();
+
 let local_storage = window.localStorage;
 let cart = {};
 let count = 0;
@@ -7,12 +7,10 @@ let count = 0;
 
 if (local_storage.getItem('cart')) {
     cart = JSON.parse(local_storage.getItem('cart'));
-    window.localStorage.clear();
 }
 
 if (local_storage.getItem('count')){
     count = parseInt(local_storage.getItem('count'));
-    window.localStorage.clear();
 }
 
 updateCartCount();
